@@ -1,23 +1,27 @@
 " Vadim's Vimrc
-
-
+"
 " ~/.vimrc  - most settings go here, shared terminal and graphic options
 " ~/.gvimrc - graphic only settings (font, window size)
 " ~/.vim/   - plugins, language specific options, color schemes
-
+"
 " Symlink vimrc file from the vim directory
 " ln -nfs ~bin/dotfiles/vim .vim
-
+"
 " :set list - turn boolean value on
 " :set nolist - turn boolean value off
 " :set list? - show current value
 " :set list& - reset to default value
-
+"
 " :h list - to get help
-
+"
 " :verbose set list?  # to find where a value was set
 " :options # to see all options
 " :set # all options that are not default
+"
+" To add graphical option to main vimrc instead of gvimrc
+" if has('gui_running')
+"   set guifont=Lucida_Console:h11
+" endif
 
 
 " Settings:

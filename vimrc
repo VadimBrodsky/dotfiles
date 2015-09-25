@@ -106,3 +106,10 @@ set hidden                    " Handle multiple buffers better
 "map <leader>tf :tabfirst<cr>
 "map <leader>tl :tablast<cr>
 "map <leader>tm :tabmove
+"
+" Autocomete with tab
+"imap <Tab> <C-N>
+
+" Abbreviations
+ab teh the
+

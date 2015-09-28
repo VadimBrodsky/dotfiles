@@ -28,10 +28,11 @@
 
 " Global:
 set nocompatible                " Vi improved
-"execute pathogen#infect()       " Pathogen plugin loader
 set title                       " Set the terminal's title
 set visualbell                  " No beeping
 
+" Pathogen plugin loader
+execute pathogen#infect()       
 
 " Swap files
 set nobackup                    " Don't make a backup before overwriting a file
@@ -113,3 +114,9 @@ set hidden                    " Handle multiple buffers better
 " Abbreviations
 ab teh the
 
+
+" Plugins
+"
+" ctrp.vim -- https://github.com/ctrlpvim/ctrlp.vim
+let g:ctrlp_map = '<c-p>'     " Remap C-p to ctrlp.vim
+let g:ctrlp_cmd = 'CtrlP'     " Remap C-p to ctrlp.vim

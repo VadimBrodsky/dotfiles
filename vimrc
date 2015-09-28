@@ -5,7 +5,9 @@
 " ~/.vim/   - plugins, language specific options, color schemes
 "
 " Symlink vimrc file from the vim directory
-" ln -nfs ~bin/dotfiles/vim .vim
+" ln -nfs ~/git/dotfiles_vb/vim ~/.vim
+" ln -nfs ~/git/dotfiles_vb/vimrc ~/.vimrc
+" ln -nfs ~/git/dotfiles_vb/gvimrc ~/.gvimrc
 "
 " :set list - turn boolean value on
 " :set nolist - turn boolean value off

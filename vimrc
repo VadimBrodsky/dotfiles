@@ -34,12 +34,11 @@ set title                       " Set the terminal's title
 set visualbell                  " No beeping
 
 " Pathogen plugin loader
-execute pathogen#infect()       
+execute pathogen#infect()
 
 " Swap files
-set nobackup                    " Don't make a backup before overwriting a file
-set nowritebackup               " And again.
-set directory=$HOME/.vim/tmp//,." Keep swap files in one location
+set backupdir^=~/.vim/_backup//    " where to put backup files.
+set directory^=~/.vim/_temp//      " where to put swap files.
 
 
 " Syntax
@@ -52,6 +51,17 @@ set number                      " Show line numbers
 set ruler                       " Show cursor position
 set cursorline                  " Highlight current line
 set colorcolumn=80              " Vertical ruler for preferred line width
+
+
+" list chars
+set list                        " Show invisible characters
+set listchars=""                " Reset the listchars
+set listchars=tab:\ \           " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.          " show trailing spaces as dots
+set listchars+=extends:>        " The character to show in the last column when wrap is
+                                " off and the line continues beyond the right of the screen
+set listchars+=precedes:<       " The character to show in the last column when wrap is
+                                " off and the line continues beyond the left of the screen
 
 "set textwidth=79
 "set wrapmargin=2

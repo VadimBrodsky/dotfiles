@@ -94,7 +94,7 @@ set expandtab                   " Use spaces instead of tabs
 
 
 " Buffers
-set hidden                    " Handle multiple buffers better
+set hidden                      " Handle multiple buffers better
 
 
 " Key Mappings
@@ -122,3 +122,11 @@ ab teh the
 " ctrp.vim -- https://github.com/ctrlpvim/ctrlp.vim
 let g:ctrlp_map = '<c-p>'     " Remap C-p to ctrlp.vim
 let g:ctrlp_cmd = 'CtrlP'     " Remap C-p to ctrlp.vim
+
+" Ignore files in CtrlP
+set wildignore+=*.zip,*.swp,*.so,*.ico,*.git      " ignore filetypes
+set wildignore+=*/node_modules/*                  " ignore node
+set wildignore+=*/bower_components/*              " ignore bower
+set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
+
+"let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components|craft/app)|(\.(swp|ico|git|svn))$'

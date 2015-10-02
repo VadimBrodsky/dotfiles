@@ -12,4 +12,5 @@ set guioptions-=r                 " Don't show right scrollbar
 set guioptions-=l                 " Don't show left scrollbar
 
 "colorscheme macvim
-colorscheme topfunky-light
+"colorscheme topfunky-light
+colorscheme solarized

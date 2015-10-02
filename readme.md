@@ -22,6 +22,12 @@ Installing submodules on a different machine
 git submodule update --init
 ```
 
+Updating linked git submodules
+
+```git
+git submodule foreach git pull origin master
+```
+
 Generate Pathogen docs
 
 ```vim

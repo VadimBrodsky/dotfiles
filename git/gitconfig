@@ -1,0 +1,13 @@
+[color]
+	ui = true
+[user]
+	name = Vadim Brodsky
+	email = vadim.brodsky@gmail.com
+[alias]
+  a = add
+  aa = add -A
+  b = branch
+  co = checkout
+  cob = checkout -b
+  d = diff
+  s = status

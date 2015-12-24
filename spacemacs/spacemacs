@@ -38,7 +38,7 @@ values."
             shell-default-position 'bottom)
      ;; react
      ruby
-     ;; ruby-on-rails
+     ruby-on-rails
      spell-checking
      syntax-checking
      version-control

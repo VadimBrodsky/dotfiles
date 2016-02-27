@@ -25,10 +25,10 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
-     ;; elixir
-     ;; elm
+     elixir
+     elm
      emacs-lisp
-     ;; git
+     git
      html
      javascript
      markdown

@@ -26,12 +26,13 @@ values."
      auto-completion
      ;; better-defaults
      ;; elixir
-     ;; elm
+     elm
      emacs-lisp
-     ;; git
+     git
      html
      javascript
      markdown
+     php
      ;; org
      (shell :variables
             shell-default-height 30
@@ -43,6 +44,7 @@ values."
      syntax-checking
      version-control
      yaml
+     themes-megapack
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -97,8 +99,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Fira Code"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -206,6 +208,30 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+;; (let ((alist '((33 . ".\\(?:\\(?:==\\)\\|[!=]\\)")
+;;                (35 . ".\\(?:[(?[_{]\\)")
+;;                (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+;;                (42 . ".\\(?:\\(?:\\*\\*\\)\\|[*/]\\)")
+;;                (43 . ".\\(?:\\(?:\\+\\+\\)\\|\\+\\)")
+;;                (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+;;                (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=]\\)")
+;;                (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+;;                (58 . ".\\(?:[:=]\\)")
+;;                (59 . ".\\(?:;\\)")
+;;                (60 . ".\\(?:\\(?:!--\\)\\|\\(?:\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[/<=>|-]\\)")
+;;                (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+;;                (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+;;                (63 . ".\\(?:[:=?]\\)")
+;;                (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
+;;                (94 . ".\\(?:=\\)")
+;;                (123 . ".\\(?:-\\)")
+;;                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+;;                (126 . ".\\(?:[=@~-]\\)")
+;;              )
+;;       ))
+;; (dolist (char-regexp alist)
+;;   (set-char-table-range composition-function-table (car char-regexp)
+;;                         `([,(cdr char-regexp) 0 font-shape-gstring]))))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

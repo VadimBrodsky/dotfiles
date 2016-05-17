@@ -24,6 +24,13 @@
 " if has('gui_running')
 "   set guifont=Lucida_Console:h11
 " endif
+"
+" open the vimrc file :e $MYVIMRC
+" manually reload vimrc
+" :source $MYVIMRC
+"
+" browser all vim configuration options
+" :browse set<cr>
 
 
 " Settings:
@@ -32,6 +39,11 @@
 set nocompatible                " Vi improved
 set title                       " Set the terminal's title
 set visualbell                  " No beeping
+set lazydraw                    " Don't update white executing macros
+
+
+" Space is my leader
+let mapleader = "\<Space>"
 
 " Pathogen plugin loader
 " execute pathogen#infect()
@@ -91,8 +103,9 @@ set hlsearch                    " Highlight matches
 
 " Editing
 set backspace=indent,eol,start  " Intuitive backspacing
+set history=1000                " Remember last 1000 commands
 set wrap                        " Turn on line wrapping
-set scrolloff=3                 " Show 3 lines of context around the cursor
+set scrolloff=4                 " Show 4 lines of context around the cursor
 :setlocal spell spelllang=en_us " Spell check for English
 
 
@@ -104,10 +117,47 @@ set expandtab                   " Use spaces instead of tabs
 
 
 " Buffers
-set hidden                      " Handle multiple buffers better
+set hidden                      " Allow buffer change w/o saving
 
 
 " Key Mappings
+" normal mode mappings
+  " replace 0 with ^, to jump to beginning of the line
+  nmap 0 ^
+  " Move up and down by visible lines if the current line is wrapper
+  nmap j gj
+  nmap k gk
+  " Map Ctrl-s to write the file
+  nmap <C-s> :w<cr>
+  " Split edit your vimrc, space, v, r
+  nmap <leader>vr :sp $MYVIMRC<cr>
+  " Edit your vimrc in a new tab
+  nmap <leader>vi :tabedit ~/.vimrc<cr>
+  " Source (reload) your vimrc. space, s, o
+  nmap <leader>so :source $MYVIMRC<cr>
+  " Pre-populate a aplit command with the current directory
+  nmap <leader>v :vnew <C-r>=escape(expand("
+  " Copy the entire buffer into the system register
+  nmap <leader>co ggVG*y
+
+
+" insert mode mappings
+  imap jk <esc>
+  imap kj <esc>
+
+
+" auto commands
+  " :h autocmd-events
+  " when a help file is open remap the q key to :q<cr>
+  autocmd Filetype help nnoremap <buffer> q :q<cr>
+
+
+" Command aliases
+  command! Q q         " Bind :Q to :q
+  command! Qall qall
+  command! QA qall
+  command! E e
+
 
 " Tab mappings
 "map <leader>tt :tabnew<cr>

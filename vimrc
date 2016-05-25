@@ -120,21 +120,29 @@ set hidden                      " Allow buffer change w/o saving
 
 " Key Mappings
 " normal mode mappings
-  " replace 0 with ^, to jump to beginning of the line
+
+  " replace 0 with ^
   nmap 0 ^
+
   " Move up and down by visible lines if the current line is wrapper
   nmap j gj
   nmap k gk
+
   " Map Ctrl-s to write the file
   nmap <C-s> :w<cr>
+
   " Split edit your vimrc, space, v, r
   nmap <leader>vr :sp $MYVIMRC<cr>
+
   " Edit your vimrc in a new tab
   nmap <leader>vi :tabedit ~/.vimrc<cr>
+
   " Source (reload) your vimrc. space, s, o
   nmap <leader>so :source $MYVIMRC<cr>
+
   " Pre-populate a split command with the current directory
   nmap <leader>v :vnew <C-r>=escape(expand("
+
   " Copy the entire buffer into the system register
   nmap <leader>co ggVG*y
 
@@ -177,6 +185,17 @@ ab teh the
 
 
 " Plugins
+"
+" Vim-Plug
+" PluInstall
+" PlugStatus
+call plug#begin('~/.vim/plugged')
+  Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file searcher
+  Plug 'tpope/vim-surround'        " Surround motions
+  Plug 'tpope/vim-repeat'          " Improved repeat motion with .
+  Plug 'tpope/vim-rails'           " Support for Rails projects
+all plug#end()
+"
 "
 " ctrp.vim -- https://github.com/ctrlpvim/ctrlp.vim
 " let g:ctrlp_map = '<c-p>'     " Remap C-p to ctrlp.vim

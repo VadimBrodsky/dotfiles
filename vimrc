@@ -194,7 +194,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'        " Surround motions
   Plug 'tpope/vim-repeat'          " Improved repeat motion with .
   Plug 'tpope/vim-rails'           " Support for Rails projects
-all plug#end()
+call plug#end()
 "
 "
 " ctrp.vim -- https://github.com/ctrlpvim/ctrlp.vim

@@ -33,7 +33,7 @@
 " :browse set<cr>
 
 
-" Settings:
+"------------------------------- Settings ------------------------------------
 
 " Global:
 set nocompatible                " Vi improved
@@ -72,10 +72,8 @@ set listchars+=extends:>        " The character to show in the last column when 
                                 " off and the line continues beyond the right of the screen
 set listchars+=precedes:<       " The character to show in the last column when wrap is
                                 " off and the line continues beyond the left of the screen
-
 "set textwidth=79
 "set wrapmargin=2
-" set list                      " show tabs and end of line characters
 
 
 " Status Line
@@ -118,7 +116,7 @@ set expandtab                   " Use spaces instead of tabs
 set hidden                      " Allow buffer change w/o saving
 
 
-" Key Mappings
+"----------------------------- Key Mappings ----------------------------------
 " normal mode mappings
 
   " replace 0 with ^
@@ -128,8 +126,9 @@ set hidden                      " Allow buffer change w/o saving
   nmap j gj
   nmap k gk
 
-  " Map Ctrl-s to write the file
+  " Save file
   nmap <C-s> :w<cr>
+  nmap <leader>fs :w<cr>
 
   " Split edit your vimrc, space, v, r
   nmap <leader>vr :sp $MYVIMRC<cr>
@@ -145,6 +144,10 @@ set hidden                      " Allow buffer change w/o saving
 
   " Copy the entire buffer into the system register
   nmap <leader>co ggVG*y
+
+  " Paste from clipboard without indentation
+  nmap <leader>vr :sp $MYVIMRC<cr>
+  nmap <leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 
 
 " insert mode mappings
@@ -180,20 +183,22 @@ set hidden                      " Allow buffer change w/o saving
 "imap <Tab> <C-N>
 
 
-" Abbreviations
+"------------------------------ Abbreviations ---------------------------------
 ab teh the
 
 
-" Plugins
+"-------------------------------- Plugins ------------------------------------
 "
 " Vim-Plug
 " PluInstall
 " PlugStatus
+"
 call plug#begin('~/.vim/plugged')
-  Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file searcher
-  Plug 'tpope/vim-surround'        " Surround motions
-  Plug 'tpope/vim-repeat'          " Improved repeat motion with .
-  Plug 'tpope/vim-rails'           " Support for Rails projects
+  Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file, buffer, mru, tag, etc finder
+  Plug 'tpope/vim-surround'        " Quoting/parenthesizing made simple
+  Plug 'tpope/vim-repeat'          " Enable repeating maps with '.'
+  Plug 'tpope/vim-rails'           " Ruby on Rails power tools
+  Plug 'tpope/vim-commentary'      " Comment stuff out
 call plug#end()
 "
 "

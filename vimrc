@@ -57,7 +57,8 @@ filetype plugin indent on       " Turn on file type detection for indentation
 
 
 " Line Numbers etc
-set number                      " Show line numbers
+"set number                      " Show line numbers
+set relativenumber               " Set relative numbers
 set ruler                       " Show cursor position
 set cursorline                  " Highlight current line
 set colorcolumn=80              " Vertical ruler for preferred line width
@@ -149,6 +150,9 @@ set hidden                      " Allow buffer change w/o saving
   nmap <leader>vr :sp $MYVIMRC<cr>
   nmap <leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 
+  " Quit Vim like Spacemacs
+  nmap <leader>qq :q<cr>
+
 
 " insert mode mappings
   imap jk <esc>
@@ -169,14 +173,15 @@ set hidden                      " Allow buffer change w/o saving
 
 
 " Tab mappings
-"map <leader>tt :tabnew<cr>
-"map <leader>te :tabedit
-"map <leader>tc :tabclose<cr>
+" same as gt go tab next
+nmap <leader>tn :tabnew<cr>
+nmap <leader>te :tabedit
+nmap <leader>tc :tabclose<cr>
 "map <leader>to :tabonly<cr>
-"map <leader>tn :tabnext<cr>
-"map <leader>tp :tabprevious<cr>
-"map <leader>tf :tabfirst<cr>
-"map <leader>tl :tablast<cr>
+nmap <leader>tn :tabnext<cr>
+nmap <leader>tp :tabprevious<cr>
+nmap <leader>tf :tabfirst<cr>
+nmap <leader>tl :tablast<cr>
 "map <leader>tm :tabmove
 "
 " Autocomete with tab

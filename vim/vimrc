@@ -39,14 +39,12 @@
 set nocompatible                " Vi improved
 set title                       " Set the terminal's title
 set visualbell                  " No beeping
-set lazydraw                    " Don't update white executing macros
+"set lazydraw                    " Don't update white executing macros
 
 
 " Space is my leader
 let mapleader = "\<Space>"
 
-" Pathogen plugin loader
-" execute pathogen#infect()
 
 " Swap files
 set backupdir^=~/.vim/_backup//    " where to put backup files.
@@ -135,7 +133,7 @@ set hidden                      " Allow buffer change w/o saving
   nmap <leader>vi :tabedit ~/.vimrc<cr>
   " Source (reload) your vimrc. space, s, o
   nmap <leader>so :source $MYVIMRC<cr>
-  " Pre-populate a aplit command with the current directory
+  " Pre-populate a split command with the current directory
   nmap <leader>v :vnew <C-r>=escape(expand("
   " Copy the entire buffer into the system register
   nmap <leader>co ggVG*y
@@ -172,6 +170,7 @@ set hidden                      " Allow buffer change w/o saving
 "
 " Autocomete with tab
 "imap <Tab> <C-N>
+
 
 " Abbreviations
 ab teh the

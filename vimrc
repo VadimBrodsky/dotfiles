@@ -89,13 +89,13 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 " Command Line Mode
 set wildmenu                    " Enhanced command line completion
 set wildmode=list:longest       " Complete files like a shell
-set ignorecase                  " Case-insensitive searching
-set smartcase                   " But case-sensitive if expression contains a capital letter
 
 
 " Search
 set incsearch                   " Highlight matches as you type
 set hlsearch                    " Highlight matches
+set ignorecase                  " Case-insensitive searching
+set smartcase                   " But case-sensitive if expression contains a capital letter
 
 
 " Editing
@@ -152,6 +152,10 @@ set hidden                      " Allow buffer change w/o saving
 
   " Quit Vim like Spacemacs
   nmap <leader>qq :q<cr>
+
+  " Remove search highlight - No Highlight
+  nmap <leader>nh :nohlsearch<cr>
+
 
 
 " insert mode mappings

@@ -156,6 +156,9 @@ set hidden                      " Allow buffer change w/o saving
   " Remove search highlight - No Highlight
   nmap <leader>nh :nohlsearch<cr>
 
+  " Previous buffer
+  nmap <leader><tab> :b#<cr>
+
 
 
 " insert mode mappings
@@ -208,6 +211,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'          " Enable repeating maps with '.'
   Plug 'tpope/vim-rails'           " Ruby on Rails power tools
   Plug 'tpope/vim-commentary'      " Comment stuff out
+  Plug 'kchmck/vim-coffee-script'  " Add CoffeeScript support
 call plug#end()
 "
 "
@@ -216,9 +220,9 @@ call plug#end()
 " let g:ctrlp_cmd = 'CtrlP'     " Remap C-p to ctrlp.vim
 
 " Ignore files in CtrlP
-" set wildignore+=*.zip,*.swp,*.so,*.ico,*.git      " ignore filetypes
-" set wildignore+=*/node_modules/*                  " ignore node
-" set wildignore+=*/bower_components/*              " ignore bower
-" set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
+set wildignore+=*.zip,*.swp,*.so,*.ico,*.git      " ignore filetypes
+set wildignore+=*/node_modules/*                  " ignore node
+set wildignore+=*/bower_components/*              " ignore bower
+set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
 
-" let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components|craft/app)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components|craft/app)|(\.(swp|ico|git|svn))$'

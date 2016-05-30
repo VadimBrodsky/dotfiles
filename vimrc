@@ -163,6 +163,9 @@ set hidden                      " Allow buffer change w/o saving
   " Current buffer to new tab
   nmap <leader>wm :tabedit %<Cr>
 
+  " Buffer list
+  nmap <leader>bb :CtrlPBuffer <Cr>
+
 
 
 " insert mode mappings

@@ -141,7 +141,8 @@ set hidden                      " Allow buffer change w/o saving
   nmap <leader>so :source $MYVIMRC<cr>
 
   " Pre-populate a split command with the current directory
-  nmap <leader>v :vnew <C-r>=escape(expand("
+  " WIP FIX ME
+  " nmap <leader>w- :vnew <C-r>=escape(expand("
 
   " Copy the entire buffer into the system register
   nmap <leader>co ggVG*y
@@ -158,6 +159,9 @@ set hidden                      " Allow buffer change w/o saving
 
   " Previous buffer
   nmap <leader><tab> :b#<cr>
+
+  " Current buffer to new tab
+  nmap <leader>wm :tabedit %<Cr>
 
 
 
@@ -212,6 +216,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rails'           " Ruby on Rails power tools
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'kchmck/vim-coffee-script'  " Add CoffeeScript support
+  Plug 'mattn/emmet-vim'           " Emmet for Vim
 call plug#end()
 "
 "
@@ -226,3 +231,5 @@ set wildignore+=*/bower_components/*              " ignore bower
 set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components|craft/app)|(\.(swp|ico|git|svn))$'
+" let g:user_emmet_leader_key='<Tab>'
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")

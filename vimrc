@@ -220,6 +220,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'kchmck/vim-coffee-script'  " Add CoffeeScript support
   Plug 'mattn/emmet-vim'           " Emmet for Vim
+  Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt
 call plug#end()
 "
 "

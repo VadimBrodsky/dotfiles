@@ -1,0 +1,8 @@
+log
+tags
+tmp
+vendor
+.git/
+node_modules/
+bower_componetns/
+craft/app/

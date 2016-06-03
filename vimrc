@@ -225,6 +225,13 @@ call plug#end()
 "
 "
 " ctrp.vim -- https://github.com/ctrlpvim/ctrlp.vim
+
+" Make CtrlP use ag for listing the files
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components|craft/app)|(\.(swp|ico|git|svn))$'
+
 " let g:ctrlp_map = '<c-p>'     " Remap C-p to ctrlp.vim
 " let g:ctrlp_cmd = 'CtrlP'     " Remap C-p to ctrlp.vim
 
@@ -234,6 +241,5 @@ set wildignore+=*/node_modules/*                  " ignore node
 set wildignore+=*/bower_components/*              " ignore bower
 set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
 
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components|craft/app)|(\.(swp|ico|git|svn))$'
 " let g:user_emmet_leader_key='<Tab>'
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")

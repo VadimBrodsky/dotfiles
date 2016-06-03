@@ -1,35 +1,23 @@
 # Vadim's Dotfiles
 
+Symlink the dotfiles to the correct location.
+
+```bash
+echo ">>> Setting symlinks"
+ln -s ~/code/dotfiles/git/gitconfig ~/.gitconfig
+ln -s ~/code/dotfiles/git/gitignore ~/.gitignore
+ln -s ~/code/dotfiles/vimrc ~/.vimrc
+ln -s ~/code/dotfiles/gvimrc ~/.gvimrc
+ln -s ~/code/dotfiles/vim ~/.vim
+ln -s ~/code/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/code/dotfiles/agignore ~/.agignore
+```
+
 ## Vim
 
-Symlink vimrc file from the vim directory
+Install Vim plugins using Vim-Plug:
 
-```bash
-ln -nfs ~/git/dotfiles_vb/vim ~/.vim
-ln -nfs ~/git/dotfiles_vb/vimrc ~/.vimrc
-ln -nfs ~/git/dotfiles_vb/gvimrc ~/.gvimrc
+```
+:PlugInstall
 ```
 
-Installing a plugin as git submodule
-
-```bash
-git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
-```
-
-Installing submodules on a different machine
-
-```bash
-git submodule update --init
-```
-
-Updating linked git submodules
-
-```git
-git submodule foreach git pull origin master
-```
-
-Generate Pathogen docs
-
-```vim
-:call pathogen#helptags()
-```

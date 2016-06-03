@@ -117,6 +117,10 @@ set expandtab                   " Use spaces instead of tabs
 set hidden                      " Allow buffer change w/o saving
 
 
+" Splits
+set splitbelow
+set splitright
+
 "----------------------------- Key Mappings ----------------------------------
 " normal mode mappings
 
@@ -165,6 +169,13 @@ set hidden                      " Allow buffer change w/o saving
 
   " Buffer list
   nmap <leader>bb :CtrlPBuffer <Cr>
+
+  " Vim <-> Tmux Key Bindings
+  let g:tmux_navigator_save_on_switch = 1
+
+  " Splits
+  nmap <leader>- :split<Cr>
+  nmap <leader>/ :vsp<Cr>
 
 
 
@@ -218,6 +229,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'          " Enable repeating maps with '.'
   Plug 'tpope/vim-rails'           " Ruby on Rails power tools
   Plug 'tpope/vim-commentary'      " Comment stuff out
+  Plug 'christoomey/vim-tmux-navigator' " Navigation between Vim and Tmux
   Plug 'kchmck/vim-coffee-script'  " Add CoffeeScript support
   Plug 'mattn/emmet-vim'           " Emmet for Vim
   Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt

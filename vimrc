@@ -60,7 +60,7 @@ filetype plugin indent on       " Turn on file type detection for indentation
 "set number                      " Show line numbers
 set relativenumber               " Set relative numbers
 set ruler                       " Show cursor position
-set cursorline                  " Highlight current line
+"set cursorline                  " Highlight current line
 set colorcolumn=80              " Vertical ruler for preferred line width
 
 

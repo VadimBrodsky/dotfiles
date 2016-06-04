@@ -118,8 +118,9 @@ set hidden                      " Allow buffer change w/o saving
 
 
 " Splits
-set splitbelow
-set splitright
+set splitbelow                  " Split down and focus
+set splitright                  " Split right and focus
+
 
 "----------------------------- Key Mappings ----------------------------------
 " normal mode mappings
@@ -177,7 +178,8 @@ set splitright
   nmap <leader>- :split<Cr>
   nmap <leader>/ :vsp<Cr>
 
-
+  nnoremap <leader>0 :wincmd _<cr> :wincmd \|<cr>
+  nnoremap <leader>= :wincmd =<cr>
 
 " insert mode mappings
   imap jk <esc>
@@ -188,6 +190,8 @@ set splitright
   " :h autocmd-events
   " when a help file is open remap the q key to :q<cr>
   autocmd Filetype help nnoremap <buffer> q :q<cr>
+  " automatically rebalance windows on Vim resize
+  autocmd VimResized * :wincmd=  
 
 
 " Command aliases

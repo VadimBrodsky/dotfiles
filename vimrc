@@ -103,7 +103,8 @@ set backspace=indent,eol,start  " Intuitive backspacing
 set history=1000                " Remember last 1000 commands
 set wrap                        " Turn on line wrapping
 set scrolloff=4                 " Show 4 lines of context around the cursor
-:setlocal spell spelllang=en_us " Spell check for English
+setlocal spell spelllang=en_us  " Spell check for English
+set complete+=kspell            " Word completion, C-N or C-P
 
 
 " number of visual spacer per TAB
@@ -158,6 +159,7 @@ set splitright                  " Split right and focus
 
   " Quit Vim like Spacemacs
   nmap <leader>qq :q<cr>
+  nmap <leader>wc :q<cr>
 
   " Remove search highlight - No Highlight
   nmap <leader>nh :nohlsearch<cr>
@@ -170,6 +172,9 @@ set splitright                  " Split right and focus
 
   " Buffer list
   nmap <leader>bb :CtrlPBuffer <Cr>
+
+  " Search in project
+  nmap <leader>pf :CtrlP <Cr>
 
   " Vim <-> Tmux Key Bindings
   let g:tmux_navigator_save_on_switch = 1
@@ -258,4 +263,4 @@ set wildignore+=*/bower_components/*              " ignore bower
 set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
 
 " let g:user_emmet_leader_key='<Tab>'
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")

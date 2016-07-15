@@ -136,6 +136,7 @@ set splitright                  " Split right and focus
   " Save file
   nmap <C-s> :w<cr>
   nmap <leader>fs :w<cr>
+  nmap <leader>ff :cd %:p:h<cr> :e . <cr>
 
   " Split edit your vimrc, space, v, r
   nmap <leader>vr :sp $MYVIMRC<cr>
@@ -242,6 +243,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script'  " Add CoffeeScript support
   Plug 'mattn/emmet-vim'           " Emmet for Vim
   Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt
+  Plug 'evidens/vim-twig'          " Twig syntax highlighting
 call plug#end()
 "
 "

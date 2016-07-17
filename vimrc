@@ -133,19 +133,20 @@ set splitright                  " Split right and focus
   nmap j gj
   nmap k gk
 
-  " Save file
+  " File Motions
+  " --------------------------------------------------------------------------
   nmap <C-s> :w<cr>
   nmap <leader>fs :w<cr>
   nmap <leader>ff :cd %:p:h<cr> :e . <cr>
 
+  " Vimrc Motions
+  " --------------------------------------------------------------------------
   " Split edit your vimrc, space, v, r
   nmap <leader>vr :sp $MYVIMRC<cr>
-
   " Edit your vimrc in a new tab
   nmap <leader>vi :tabedit ~/.vimrc<cr>
-
-  " Source (reload) your vimrc. space, s, o
-  nmap <leader>so :source $MYVIMRC<cr>
+  " Vim (reload) your vimrc. space, s, o
+  nmap <leader>vo :source $MYVIMRC<cr>
 
   " Pre-populate a split command with the current directory
   " WIP FIX ME
@@ -165,6 +166,8 @@ set splitright                  " Split right and focus
   " Remove search highlight - No Highlight
   nmap <leader>nh :nohlsearch<cr>
 
+  " Buffer Motions
+  " --------------------------------------------------------------------------
   " Previous buffer
   nmap <leader><tab> :b#<cr>
 
@@ -174,12 +177,21 @@ set splitright                  " Split right and focus
   " Buffer list
   nmap <leader>bb :CtrlPBuffer <Cr>
 
+
+  " Project Motions
+  " --------------------------------------------------------------------------
   " Search in project
   nmap <leader>pf :CtrlP <Cr>
 
+
+  " Vim Tmux Motions
+  " --------------------------------------------------------------------------
   " Vim <-> Tmux Key Bindings
   let g:tmux_navigator_save_on_switch = 1
 
+
+  " Splits Motions
+  " --------------------------------------------------------------------------
   " Splits
   nmap <leader>- :split<Cr>
   nmap <leader>/ :vsp<Cr>
@@ -208,6 +220,7 @@ set splitright                  " Split right and focus
 
 
 " Tab mappings
+" --------------------------------------------------------------------------
 " same as gt go tab next
 nmap <leader>tn :tabnew<cr>
 nmap <leader>te :tabedit
@@ -244,6 +257,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'           " Emmet for Vim
   Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt
   Plug 'evidens/vim-twig'          " Twig syntax highlighting
+
+  " Vim-Snipmate and dependencies
+  Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'tomtom/tlib_vim'
+  Plug 'garbas/vim-snipmate'
+  Plug 'honza/vim-snippets'
 call plug#end()
 "
 "

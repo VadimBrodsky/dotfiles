@@ -1,4 +1,6 @@
-/tmux/.tmux.conf
 /vim/plugged
 .netrwhist
 *.swp
+/_backup/!.keep
+/_temp/!.keep
+

@@ -56,12 +56,17 @@ syntax on                       " Turn syntax highlighting on
 filetype plugin indent on       " Turn on file type detection for indentation
 
 
+
 " Line Numbers etc
 "set number                      " Show line numbers
 set relativenumber               " Set relative numbers
 set ruler                       " Show cursor position
-"set cursorline                  " Highlight current line
+set cursorline                  " Highlight current line
+
 set colorcolumn=80              " Vertical ruler for preferred line width
+let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " list chars
@@ -254,9 +259,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'christoomey/vim-tmux-navigator' " Navigation between Vim and Tmux
   Plug 'kchmck/vim-coffee-script'  " Add CoffeeScript support
-  Plug 'mattn/emmet-vim'           " Emmet for Vim
-  Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt
-  Plug 'evidens/vim-twig'          " Twig syntax highlighting
+  " Plug 'mattn/emmet-vim'           " Emmet for Vim
+  " Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt
+  " Plug 'evidens/vim-twig'          " Twig syntax highlighting
+  Plug 'scrooloose/syntastic'      " Syntax checking for vim
 
   " Vim-Snipmate and dependencies
   Plug 'MarcWeber/vim-addon-mw-utils'
@@ -284,4 +290,14 @@ set wildignore+=*/bower_components/*              " ignore bower
 set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
 
 " let g:user_emmet_leader_key='<Tab>'
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+
+" Syntastic settings
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0

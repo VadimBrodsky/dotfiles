@@ -4,7 +4,7 @@
 " ~/.gvimrc - graphic only settings (font, window size)
 " ~/.vim/   - plugins, language specific options, color schemes
 "
-" Symlink vimrc file from the vim directory
+" symlink vimrc file from the vim directory
 " ln -nfs ~/git/dotfiles_vb/vim ~/.vim
 " ln -nfs ~/git/dotfiles_vb/vimrc ~/.vimrc
 " ln -nfs ~/git/dotfiles_vb/gvimrc ~/.gvimrc
@@ -64,9 +64,6 @@ set ruler                       " Show cursor position
 set cursorline                  " Highlight current line
 
 set colorcolumn=80              " Vertical ruler for preferred line width
-let &colorcolumn=join(range(81,999),",")
-let &colorcolumn="80,".join(range(120,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " list chars
@@ -240,6 +237,16 @@ nmap <leader>tl :tablast<cr>
 " Autocomete with tab
 "imap <Tab> <C-N>
 
+"------------------------------ Visuals ---------------------------------
+" colorscheme solarized
+set background=light
+
+let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=236 guibg=#ece6d5
+
+set ttyfast
+
 
 "------------------------------ Abbreviations ---------------------------------
 ab teh the
@@ -263,6 +270,9 @@ call plug#begin('~/.vim/plugged')
   " Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt
   " Plug 'evidens/vim-twig'          " Twig syntax highlighting
   Plug 'scrooloose/syntastic'      " Syntax checking for vim
+
+  Plug 'vim-airline/vim-airline'   " Status / Tabline
+  Plug 'vim-airline/vim-airline-themes'
 
   " Vim-Snipmate and dependencies
   Plug 'MarcWeber/vim-addon-mw-utils'
@@ -301,3 +311,6 @@ set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+
+let g:airline_theme='solarized'
+

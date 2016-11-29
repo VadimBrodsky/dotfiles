@@ -40,6 +40,7 @@ set nocompatible                " Vi improved
 set title                       " Set the terminal's title
 set visualbell                  " No beeping
 "set lazydraw                    " Don't update white executing macros
+set updatetime=250              " Change update time to 250ms from 4 sec
 
 
 " Space is my leader
@@ -63,7 +64,7 @@ set relativenumber               " Set relative numbers
 set ruler                       " Show cursor position
 set cursorline                  " Highlight current line
 
-set colorcolumn=80              " Vertical ruler for preferred line width
+set colorcolumn=0              " Vertical ruler for preferred line width
 
 
 " list chars
@@ -168,6 +169,8 @@ set splitright                  " Split right and focus
   " Remove search highlight - No Highlight
   nmap <leader>nh :nohlsearch<cr>
 
+  nmap <leader>ns :set nospell<cr>
+
   " Buffer Motions
   " --------------------------------------------------------------------------
   " Previous buffer
@@ -237,16 +240,6 @@ nmap <leader>tl :tablast<cr>
 " Autocomete with tab
 "imap <Tab> <C-N>
 
-"------------------------------ Visuals ---------------------------------
-" colorscheme solarized
-set background=light
-
-let &colorcolumn=join(range(81,999),",")
-" let &colorcolumn="80,".join(range(120,999),",")
-highlight ColorColumn ctermbg=236 guibg=#ece6d5
-
-set ttyfast
-
 
 "------------------------------ Abbreviations ---------------------------------
 ab teh the
@@ -270,7 +263,12 @@ call plug#begin('~/.vim/plugged')
   " Plug 'freitass/todo.txt-vim'     " Vim plugin for Todo.txt
   " Plug 'evidens/vim-twig'          " Twig syntax highlighting
   Plug 'scrooloose/syntastic'      " Syntax checking for vim
+  Plug 'ElmCast/elm-vim'
 
+  " Git
+  Plug 'airblade/vim-gitgutter'   " Git gutter
+
+  " Airline
   Plug 'vim-airline/vim-airline'   " Status / Tabline
   Plug 'vim-airline/vim-airline-themes'
 
@@ -279,6 +277,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomtom/tlib_vim'
   Plug 'garbas/vim-snipmate'
   Plug 'honza/vim-snippets'
+
+  Plug 'crusoexia/vim-monokai'
+  " Plug 'othree/yajs.vim'
+  Plug 'isRuslan/vim-es6'
 call plug#end()
 "
 "
@@ -312,5 +314,24 @@ set wildignore+=*/craft/app/*,*/craft/storage/*   " ignore craft
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
-let g:airline_theme='solarized'
 
+
+
+"------------------------------ Visuals ---------------------------------
+set t_Co=256
+" set background=dark
+
+" colorscheme solarized
+colorscheme monokai
+
+" let &colorcolumn=join(range(81,999),",")
+" " let &colorcolumn="80,".join(range(120,999),",")
+" highlight ColorColumn ctermbg=236 guibg=#ece6d5
+
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+
+set ttyfast
+let g:airline_theme='kolor'
+
+autocmd BufNewFile,BufRead *.es6   set syntax=javascript

@@ -42,7 +42,7 @@ set nojoinspaces                " Prevents inserting two spaces after punctuatio
 
 
 " Line Numbers
-"set number                      " Show line numbers
+set number                      " Show line numbers
 " set relativenumber               " Set relative numbers
 
 " Relative numbering

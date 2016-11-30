@@ -9,9 +9,14 @@
 call plug#begin('~/.config/nvim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file, buffer, mru, tag, etc finder
   Plug 'tpope/vim-commentary'      " Comment stuff out
+  Plug 'tpope/vim-surround'        " Quoting/parenthesizing made simple
   Plug 'tpope/vim-rails'           " Ruby on Rails power tools
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'airblade/vim-gitgutter'    " Git gutter
+  Plug 'scrooloose/syntastic'      " Syntax checking for vim
+
+  " Additional Languages
+  Plug 'ElmCast/elm-vim'           " Elm
 
   " Airline
   Plug 'vim-airline/vim-airline'   " Status / Tabline
@@ -33,7 +38,7 @@ let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
 
-" airline
+" Airline
 let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_sep = ' '
@@ -45,3 +50,13 @@ let g:airline_left_alt_sep = '|'
 let g:airline_right_sep = ' '
 let g:airline_right_alt_sep = '|'
 let g:airline_theme='kolor'
+
+
+" Syntastic settings
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0

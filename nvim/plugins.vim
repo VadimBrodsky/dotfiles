@@ -25,9 +25,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline-themes'
 
   " Vim-Snipmate and dependencies
-  Plug 'MarcWeber/vim-addon-mw-utils'
-  Plug 'tomtom/tlib_vim'
-  Plug 'garbas/vim-snipmate'
+  " Plug 'MarcWeber/vim-addon-mw-utils'
+  " Plug 'tomtom/tlib_vim'
+  " Plug 'garbas/vim-snipmate'
+  Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 
   " Themes
@@ -39,6 +40,14 @@ call plug#end()
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
+
+" UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
 
 " Airline
 let g:airline#extensions#tabline#enabled = 2
@@ -67,4 +76,4 @@ set statusline+=%*
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
-
+" let g:deoplete#sources = ['file', 'ultisnips']

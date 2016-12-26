@@ -19,7 +19,11 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Additional Languages
   Plug 'ElmCast/elm-vim'           " Elm
-  Plug 'HerringtonDarkholme/yats.vim' "TypeScript
+
+  " Typescript
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Shougo/vimproc.vim'
+  Plug 'Quramy/tsuquyomi'
 
   " Airline
   Plug 'vim-airline/vim-airline'   " Status / Tabline

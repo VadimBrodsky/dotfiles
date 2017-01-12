@@ -36,7 +36,7 @@ nmap <leader>ns :set nospell<cr>
 " --------------------------------------------------------------------------
 nmap <C-s> :w<cr>
 nmap <leader>fs :w<cr>
-nmap <leader>ff :cd %:p:h<cr> :e . <cr>
+nmap <leader>ff :VimFilerCurrentDir <cr>
 
 
 " Vimrc Motions - v

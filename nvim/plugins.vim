@@ -14,6 +14,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'    " Git gutter
   Plug 'scrooloose/syntastic'      " Syntax checking for vim
 
+  Plug 'Shougo/unite.vim'          " vimfiler dependency
+  Plug 'Shougo/vimfiler.vim'       " File explorer
+
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -83,3 +86,7 @@ set statusline+=%*
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#sources = ['file', 'ultisnips']
+
+
+" Vimfiler
+let g:vimfiler_as_default_explorer = 1

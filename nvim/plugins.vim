@@ -38,6 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Themes
   Plug 'crusoexia/vim-monokai'
+  Plug 'jdkanani/vim-material-theme'
 call plug#end()
 
 

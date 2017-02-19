@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'airblade/vim-gitgutter'    " Git gutter
   Plug 'scrooloose/syntastic'      " Syntax checking for vim
+  Plug 'jiangmiao/auto-pairs'      " Insrt or delete brackets, parens in pairs
 
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

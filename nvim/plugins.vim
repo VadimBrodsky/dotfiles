@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'airblade/vim-gitgutter'    " Git gutter
   Plug 'scrooloose/syntastic'      " Syntax checking for vim
+  Plug 'jiangmiao/auto-pairs'      " Insrt or delete brackets, parens in pairs
 
   Plug 'Shougo/unite.vim'          " vimfiler dependency
   Plug 'Shougo/vimfiler.vim'       " File explorer

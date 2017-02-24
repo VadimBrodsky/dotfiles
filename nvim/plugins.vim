@@ -78,6 +78,11 @@ let g:airline#extensions#tagbar#enabled = 1
 " set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" Use ESlint
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = '$HOME/.nvm/versions/node/v6.9.1/bin/eslint'
+
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1

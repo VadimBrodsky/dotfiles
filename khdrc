@@ -1,0 +1,42 @@
+# Vadim's khdrc
+
+# Enable kwn compatability
+khd kwm on
+
+# Enable the prefix mode
+khd mode prefix prefix on
+khd mode prefix timeout 0.75
+khd mode prefix restore default
+khd mode prefix color 0xFF458588
+
+# Activate prefix mode
+0x50                 :    khd -e "mode activate prefix"
+
+# Modify Container
+prefix - s               :    kwmc window -c split-mode toggle
+prefix - 0x32            :    kwmc window -c type toggle
+
+# Give Focus To Window
+prefix - h               :    kwmc window -f west
+prefix - j               :    kwmc window -f south
+prefix - k               :    kwmc window -f north
+prefix - l               :    kwmc window -f east
+# prefix - n               :    kwmc window -fm next
+# prefix + shift - n       :    kwmc window -fm prev
+
+prefix + shift - h       : kwmc window -c expand 0.05 west
+prefix + shift - j       : kwmc window -c expand 0.05 south
+prefix + shift - k       : kwmc window -c expand 0.05 north
+prefix + shift - l       : kwmc window -c expand 0.05 east
+
+prefix + shift + ctrl - h       : kwmc window -c reduce 0.05 west
+prefix + shift + ctrl - j       : kwmc window -c reduce 0.05 south
+prefix + shift + ctrl - k       : kwmc window -c reduce 0.05 north
+prefix + shift + ctrl - l       : kwmc window -c reduce 0.05 east
+
+# Give Focus To Screen
+prefix - 1            :    kwmc display -f 0
+prefix - 2            :    kwmc display -f 1
+prefix - 3            :    kwmc display -f 2
+
+prefix - f               : kwmc window -z fullscreen

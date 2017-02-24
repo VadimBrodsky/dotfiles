@@ -1,5 +1,5 @@
 # padding from the edge of the screen
-kwmc config padding 30 10 10 10
+kwmc config padding 40 20 20 20
 
 #  gaps between splits
 kwmc config gap 10 10

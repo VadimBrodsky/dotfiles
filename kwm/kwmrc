@@ -1,8 +1,8 @@
 # padding from the edge of the screen
-kwmc config padding 40 20 20 20
+kwmc config padding 40 20 40 40
 
 #  gaps between splits
-kwmc config gap 10 10
+kwmc config gap 20 20
 
 # Automatically float windows that fail to resize
 kwmc config float-non-resizable on
@@ -31,12 +31,12 @@ kwmc config cycle-focus on
 
 # Enable border for focused window
 kwmc config border focused on
-kwmc config border focused size 2
+kwmc config border focused size 1
 kwmc config border focused color 0xFFBDD322
-kwmc config border focused radius 6
+kwmc config border focused radius 3
 
 # Enable border for marked window
 kwmc config border marked on
-kwmc config border marked size 2
-kwmc config border marked color 0xFFCC5577
-kwmc config border marked radius 6
+kwmc config border marked size 1
+kwmc config border marked color 0xFF458588
+kwmc config border marked radius 3

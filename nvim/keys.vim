@@ -19,6 +19,7 @@ imap kj <esc>
 " Quit Vim like Spacemacs
 nmap <leader>qq :q<cr>
 nmap <leader>wc :q<cr>
+nmap <leader>qa :qa<cr>
 
 " Remove search or highlight
 nmap <leader>nh :nohlsearch<cr>

@@ -1,0 +1,7 @@
+Leader {{{1
+Close buffer             <leader> qq   N
+Close buffer             <leader> wc   N
+Quit Vim                 <leader> qa   N
+No search highlight      <leader> nh   N
+No spell highlight       <leader> ns   N
+}}}

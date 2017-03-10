@@ -38,16 +38,14 @@ prefix + shift - j         :    kwmc window -m south
 prefix + shift - h         :    kwmc window -m west
 
 # Expand window size
-prefix + ctrl - h       : kwmc window -c expand 0.05 west
-prefix + ctrl - j       : kwmc window -c expand 0.05 south
-prefix + ctrl - k       : kwmc window -c expand 0.05 north
-prefix + ctrl - l       : kwmc window -c expand 0.05 east
-
-# Reduce window size
-# prefix + shift + ctrl - h       : kwmc window -c reduce 0.05 west
-# prefix + shift + ctrl - j       : kwmc window -c reduce 0.05 south
-# prefix + shift + ctrl - k       : kwmc window -c reduce 0.05 north
-# prefix + shift + ctrl - l       : kwmc window -c reduce 0.05 east
+prefix + ctrl - h                : kwmc window -c expand 0.05 west
+prefix + ctrl + shift  - h       : kwmc window -c reduce 0.05 west
+prefix + ctrl - j                : kwmc window -c expand 0.05 south
+prefix + ctrl + shift  - j       : kwmc window -c reduce 0.05 south
+prefix + ctrl - k                : kwmc window -c expand 0.05 north
+prefix + ctrl + shift  - k       : kwmc window -c reduce 0.05 north
+prefix + ctrl - l                : kwmc window -c expand 0.05 east
+prefix + ctrl + shift  - l       : kwmc window -c reduce 0.05 east
 
 # Give Focus To Screen
 prefix - 1            :    kwmc display -f 0

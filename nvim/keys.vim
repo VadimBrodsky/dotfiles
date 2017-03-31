@@ -107,6 +107,11 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " Toggle between normal and relative numbering.
 nnoremap <leader>cn :call NumberToggle()<cr>
 
+" Change color schemes
+nmap <leader>ccp :PrevColorScheme<cr>
+nmap <leader>ccn :NextColorScheme<cr>
+nmap <leader>ccr :RandomColorScheme<cr>
+
 
 " Auto Commands
 " --------------------------------------------------------------------------

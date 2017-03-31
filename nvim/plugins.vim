@@ -44,6 +44,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'honza/vim-snippets'
 
   " Themes
+  Plug 'xolox/vim-misc'
+  Plug 'xolox/vim-colorscheme-switcher'
   Plug 'flazz/vim-colorschemes'
   Plug 'crusoexia/vim-monokai'
   Plug 'jdkanani/vim-material-theme'

@@ -20,6 +20,7 @@ set nojoinspaces                " Prevents inserting two spaces after punctuatio
 " Line Numbers
 set number                      " Show line numbers
 " set relativenumber               " Set relative numbers
+set nuw=5
 
 " Relative numbering
 function! NumberToggle()
@@ -106,3 +107,4 @@ set hidden                      " Allow buffer change w/o saving
 " Splits
 set splitbelow                  " Split down and focus
 set splitright                  " Split right and focus
+

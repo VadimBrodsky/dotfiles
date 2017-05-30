@@ -152,3 +152,4 @@ nmap <leader>ccr :RandomColorScheme<cr>
   command! Qall qall
   command! QA qall
   command! E e
+  command! PrettyJson %!python -m json.tool

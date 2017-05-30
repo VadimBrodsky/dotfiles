@@ -20,7 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vimwiki/vimwiki'           " Personal Vim Wiki
 
   Plug 'Shougo/unite.vim'          " vimfiler dependency
-  Plug 'Shougo/vimfiler.vim'       " File explorer
+  " Plug 'Shougo/vimfiler.vim'       " File explorer
 
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -102,4 +102,4 @@ let g:deoplete#enable_at_startup = 1
 
 
 " Vimfiler
-let g:vimfiler_as_default_explorer = 1
+" let g:vimfiler_as_default_explorer = 1

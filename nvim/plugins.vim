@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens in pairs
   Plug 'mtth/scratch.vim'          " Scratch buttfer
   Plug 'lifepillar/vim-cheat40'    " Vim Cheatsheet
+  Plug 'vimwiki/vimwiki'           " Personal Vim Wiki
 
   Plug 'Shougo/unite.vim'          " vimfiler dependency
   Plug 'Shougo/vimfiler.vim'       " File explorer

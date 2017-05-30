@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Additional Languages
   Plug 'sheerun/vim-polyglot'      " Additional languages
+  Plug 'nikvdp/ejs-syntax'         " Ejs syntax
 
   " Typescript
   Plug 'leafgarland/typescript-vim'

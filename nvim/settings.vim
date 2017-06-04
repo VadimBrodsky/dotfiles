@@ -11,7 +11,6 @@ syntax on                       " Turn syntax highlighting on
 filetype plugin indent on       " Turn on file type detection for indentation
 set showmatch                   " Show matching brackets.
 
-set esckeys                     " Cursor keys in insert mode.
 set linespace=20                " Set line-spacing to minimum
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
 

@@ -13,13 +13,14 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'        " Git wrapper
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'airblade/vim-gitgutter'    " Git gutter
-  Plug 'scrooloose/syntastic'      " Syntax checking for vim
   Plug 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens in pairs
   Plug 'mtth/scratch.vim'          " Scratch buttfer
   Plug 'lifepillar/vim-cheat40'    " Vim Cheatsheet
   Plug 'vimwiki/vimwiki'           " Personal Vim Wiki
+  Plug 'w0rp/ale'                  " Asynchronous Lint Engine
 
-  Plug 'Shougo/unite.vim'          " vimfiler dependency
+  " Plug 'scrooloose/syntastic'      " Syntax checking for vim
+  " Plug 'Shougo/unite.vim'          " vimfiler dependency
   " Plug 'Shougo/vimfiler.vim'       " File explorer
 
   " Dark powered asynchronous completion framework for neovim
@@ -30,13 +31,13 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nikvdp/ejs-syntax'         " Ejs syntax
 
   " Typescript
-  Plug 'leafgarland/typescript-vim'
-  Plug 'Shougo/vimproc.vim'
-  Plug 'Quramy/tsuquyomi'
+  " Plug 'leafgarland/typescript-vim'
+  " Plug 'Shougo/vimproc.vim'
+  " Plug 'Quramy/tsuquyomi'
 
   " Airline
-  " Plug 'vim-airline/vim-airline'   " Status / Tabline
-  " Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-airline/vim-airline'   " Status / Tabline
+  Plug 'vim-airline/vim-airline-themes'
 
   " Vim-Snipmate and dependencies
   " Plug 'MarcWeber/vim-addon-mw-utils'
@@ -68,18 +69,19 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " let g:UltiSnipsEditSplit="vertical"
 
 " Airline
-" let g:airline#extensions#tabline#enabled = 2
-" let g:airline#extensions#tabline#fnamemod = ':t'
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline#extensions#tabline#right_sep = ' '
-" let g:airline#extensions#tabline#right_alt_sep = '|'
-" let g:airline_left_sep = ' '
-" let g:airline_left_alt_sep = '|'
-" let g:airline_right_sep = ' '
-" let g:airline_right_alt_sep = '|'
-" let g:airline_theme='kolor'
-" let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tabline#enabled = 2
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = '|'
+let g:airline_theme='kolor'
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 
 " Syntastic settings
@@ -88,8 +90,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " set statusline+=%*
 
 " Use ESlint
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = '$HOME/.nvm/versions/node/v6.9.1/bin/eslint'
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exec = '$HOME/.nvm/versions/node/v6.9.1/bin/eslint'
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1

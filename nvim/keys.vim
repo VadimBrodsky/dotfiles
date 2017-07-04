@@ -90,6 +90,11 @@ nnoremap <leader>= :wincmd =<cr>
 " nmap <leader>w- :vnew <C-r>=escape(expand("
 
 
+" Terminal
+" --------------------------------------------------------------------------
+:tnoremap <Esc> <C-\><C-n>      "Exit terminal mode
+
+
 " Tab mappings - t
 " --------------------------------------------------------------------------
 nmap <leader>tn :tabnew<cr>

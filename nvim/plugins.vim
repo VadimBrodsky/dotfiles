@@ -48,6 +48,12 @@ call plug#end()
 let g:ctrlp_use_caching = 0
 
 
+" vimwiki -- https://github.com/vimwiki/vimwiki
+let g:vimwiki_list = [{'path': '~/code/wiki/',
+                     \ 'index': 'Home',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
+
+
 " UltiSnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"

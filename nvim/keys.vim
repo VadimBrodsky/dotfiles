@@ -136,7 +136,7 @@ nnoremap <leader>cnh :set nornu nonu <cr>
 nnoremap <leader>cns :set number<cr>
 
 
-" Change color schemes
+" Change color theme
 nmap <leader>ccp :PrevColorScheme<cr>
 nmap <leader>ccn :NextColorScheme<cr>
 nmap <leader>ccr :RandomColorScheme<cr>

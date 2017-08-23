@@ -98,6 +98,11 @@ let g:airline#extensions#ale#enabled = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
+" ALE
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_linters = {
+\ 'typescript': ['tslint'],
+\}
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1

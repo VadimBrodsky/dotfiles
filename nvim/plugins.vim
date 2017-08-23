@@ -31,9 +31,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nikvdp/ejs-syntax'         " Ejs syntax
 
   " Typescript
-  " Plug 'leafgarland/typescript-vim'
-  " Plug 'Shougo/vimproc.vim'
-  " Plug 'Quramy/tsuquyomi'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Shougo/vimproc.vim'
+  Plug 'Quramy/tsuquyomi'
 
   " Airline
   Plug 'vim-airline/vim-airline'   " Status / Tabline

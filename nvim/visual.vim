@@ -1,8 +1,9 @@
 "------------------------------ Visuals ---------------------------------
 set t_Co=256
 set background=light
+set termguicolors
 
-colorscheme motus
+colorscheme mrpink
 " colorscheme solarized
 " colorscheme monokai
 " colorscheme material-theme

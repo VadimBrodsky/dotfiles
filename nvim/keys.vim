@@ -158,3 +158,4 @@ nmap <leader>ccr :RandomColorScheme<cr>
   command! QA qall
   command! E e
   command! PrettyJson %!python -m json.tool
+  command! Shuffle %!perl -MList::Util=shuffle -e 'print shuffle(<STDIN>);'

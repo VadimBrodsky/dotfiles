@@ -3,7 +3,7 @@ set t_Co=256
 set background=light
 set termguicolors
 
-colorscheme mrpink
+colorscheme dracula
 " colorscheme solarized
 " colorscheme monokai
 " colorscheme material-theme

@@ -52,6 +52,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'flazz/vim-colorschemes'
   Plug 'crusoexia/vim-monokai'
   Plug 'jdkanani/vim-material-theme'
+  Plug 'dracula/vim'
 call plug#end()
 
 

@@ -40,6 +40,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Themes
   Plug 'crusoexia/vim-monokai'
+  Plug 'dracula/vim'
 call plug#end()
 
 

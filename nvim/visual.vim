@@ -4,7 +4,8 @@ set termguicolors
 set background=dark
 
 " colorscheme solarized
-colorscheme monokai
+" colorscheme monokai
+colorscheme dracula
 
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(120,999),",")

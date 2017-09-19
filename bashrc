@@ -112,15 +112,24 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
-export NVM_DIR="/home/vadim/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # Allows Docker WSL to talk to docker on Windows
 export DOCKER_HOST=tcp://127.0.0.1:2375
 
-alias vim="nvim"
-alias g="git"
+alias g='git'
+alias vim='nvim'
+alias ctop='docker run --rm -ti \
+  --name=ctop \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  quay.io/vektorlab/ctop:latest'

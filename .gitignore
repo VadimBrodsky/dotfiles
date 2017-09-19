@@ -1,5 +1,6 @@
 /vim/plugged
 /nvim/plugged
+/nvim/spell
 .netrwhist
 *.swp
 *.swo

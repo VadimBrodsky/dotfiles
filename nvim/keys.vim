@@ -51,7 +51,9 @@ vnoremap <leader>P "+P
 " --------------------------------------------------------------------------
 nmap <C-s> :w<cr>
 nmap <leader>fs :w<cr>
-nmap <leader>ff :VimFilerCurrentDir <cr>
+nmap <leader>ff :Explore <cr>
+nmap <leader>fv :Vexplore <cr>
+nmap <leader>fh :Hexplore <cr>
 
 
 " Vimrc Motions - v

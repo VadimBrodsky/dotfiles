@@ -39,14 +39,13 @@ set colorcolumn=0               " Vertical ruler for preferred line width
 
 
 " Status Line
-set laststatus=2                " Show the status line all the time
+o
 set showcmd                     " Display incomplete commands
 set showmode                    " Display the mode you're in
-" set modeline                    " Show the mode line
+set modeline                    " Show the mode line
 
 " Useful status information at bottom of screen
 " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
 
 
 " list chars

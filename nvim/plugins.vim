@@ -36,8 +36,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Quramy/tsuquyomi'
 
   " Airline
-  Plug 'vim-airline/vim-airline'   " Status / Tabline
-  Plug 'vim-airline/vim-airline-themes'
+  " Plug 'vim-airline/vim-airline'   " Status / Tabline
+  " Plug 'vim-airline/vim-airline-themes'
 
   " Vim-Snipmate and dependencies
   " Plug 'MarcWeber/vim-addon-mw-utils'
@@ -70,19 +70,19 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " let g:UltiSnipsEditSplit="vertical"
 
 " Airline
-let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ' '
-let g:airline#extensions#tabline#right_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
-let g:airline_theme='kolor'
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#tabline#enabled = 2
+" let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#right_sep = ' '
+" let g:airline#extensions#tabline#right_alt_sep = '|'
+" let g:airline_left_sep = ' '
+" let g:airline_left_alt_sep = '|'
+" let g:airline_right_sep = ' '
+" let g:airline_right_alt_sep = '|'
+" let g:airline_theme='kolor'
+" let g:airline#extensions#tagbar#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 
 
 " Syntastic settings

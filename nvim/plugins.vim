@@ -20,6 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Additional Languages
+  Plug 'sheerun/vim-polyglot'      " Additional languages
   Plug 'ElmCast/elm-vim'           " Elm
 
   " Typescript

@@ -107,3 +107,6 @@ set hidden                      " Allow buffer change w/o saving
 set splitbelow                  " Split down and focus
 set splitright                  " Split right and focus
 
+
+" Undo History
+set undofile                    " Use the undo file to store undo history

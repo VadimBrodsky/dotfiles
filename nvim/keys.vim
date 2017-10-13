@@ -29,6 +29,18 @@ nmap <leader>ns :set nospell<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Fold tag
+nnoremap <leader>tf Vatzf
+
+" Reselect pasted code
+nnoremap <leader>v V`]
+
+" Move around Vim splits using C-x
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Copy the entire buffer into the system register
 " nmap <leader>co ggVG*y
 
@@ -167,3 +179,4 @@ nmap <leader>ccr :RandomColorScheme<cr>
   command! E e
   command! PrettyJson %!python -m json.tool
   command! Shuffle %!perl -MList::Util=shuffle -e 'print shuffle(<STDIN>);'
+  command! StripWhitespace %s/\s\+$//<cr>:let @/=''<CR>

@@ -155,6 +155,8 @@ nmap <leader>ccr :RandomColorScheme<cr>
   autocmd Filetype help nnoremap <buffer> q :q<cr>
   " automatically rebalance windows on Vim resize
   autocmd VimResized * :wincmd=  
+  " save file on focus lost
+  autocmd FocusLost * :wa
 
 
 " Command Aliases

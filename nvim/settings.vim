@@ -39,7 +39,7 @@ set colorcolumn=0               " Vertical ruler for preferred line width
 
 
 " Status Line
-o
+" set laststatus=2                " Show the status line all the time
 set showcmd                     " Display incomplete commands
 set showmode                    " Display the mode you're in
 set modeline                    " Show the mode line

@@ -57,6 +57,7 @@ set modeline                    " Show the mode line
 "                                 " off and the line continues beyond the right of the screen
 " set listchars+=precedes:<       " The character to show in the last column when wrap is
 "                                 " off and the line continues beyond the left of the screen
+" set listchars=tab:▸\ ,eol:¬
 
 " Tell Vim which characters to show for expanded TABs,
 " trailing whitespace, and end-of-lines. VERY useful!

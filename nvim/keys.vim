@@ -25,6 +25,10 @@ nmap <leader>qa :qa<cr>
 nmap <leader>nh :nohlsearch<cr>
 nmap <leader>ns :set nospell<cr>
 
+" Bracket matching, same as %
+nnoremap <tab> %
+vnoremap <tab> %
+
 " Copy the entire buffer into the system register
 " nmap <leader>co ggVG*y
 

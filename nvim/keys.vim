@@ -63,6 +63,11 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 
+" Yank Ring
+" --------------------------------------------------------------------------
+nnoremap <leader>ys :YRShow<CR>
+
+
 " File Motions - f
 " --------------------------------------------------------------------------
 nmap <C-s> :w<cr>

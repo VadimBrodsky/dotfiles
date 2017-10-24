@@ -1,3 +1,4 @@
+--recurse=yes
 --langmap=javascript:.js.es6.es.jsx
 --javascript-kinds=-c-f-m-p-v
 
@@ -39,14 +40,19 @@
 
 --regex-javascript=/^[ \t]*(var|let|const)[ \t]+([A-Za-z0-9_$]+)[ \t]*=[ \t]*[^\[{]*;$/\2/V,Variable,Variables/
 
---exclude=min
---exclude=vendor
---exclude=\*.min.\*
---exclude=\*.map
---exclude=\*.swp
+--exclude=.git
 --exclude=\*.bak
---exclude=tags
---exclude=node_modules
+--exclude=\*.map
+--exclude=\*.min.\*
+--exclude=\*.swp
 --exclude=bower_components
+--exclude=db/*
+--exclude=log/*
+--exclude=min
+--exclude=node_modules
+--exclude=tags
 --exclude=test
 --exclude=tests
+--exclude=vendor
+--exclude=vendor/*
+

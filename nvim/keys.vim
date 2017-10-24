@@ -118,6 +118,11 @@ nnoremap <leader>= :wincmd =<cr>
 :tnoremap <Esc> <C-\><C-n>      "Exit terminal mode
 
 
+" Tag mappings - g
+" --------------------------------------------------------------------------
+nmap <leader>gg :GenerateTags<cr>
+nmap <leader>gt <c-]>
+
 " Tab mappings - t
 " --------------------------------------------------------------------------
 nmap <leader>tn :tabnew<cr>
@@ -185,3 +190,5 @@ nmap <leader>ccr :RandomColorScheme<cr>
   command! PrettyJson %!python -m json.tool
   command! Shuffle %!perl -MList::Util=shuffle -e 'print shuffle(<STDIN>);'
   command! StripWhitespace %s/\s\+$//<cr>:let @/=''<CR>
+  command! GenerateTags !ctags .
+

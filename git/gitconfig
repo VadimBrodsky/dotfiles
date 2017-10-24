@@ -12,4 +12,6 @@
   d = diff
   s = status
 [core]
-	editor = vim
+	editor = nvim
+	autocrlf = input
+	excludesfile = /Users/vbrodsky/.gitignore

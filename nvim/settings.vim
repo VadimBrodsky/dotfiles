@@ -112,3 +112,10 @@ set splitright                  " Split right and focus
 
 " Undo History
 set undofile                    " Use the undo file to store undo history
+
+
+" Vim Grep
+if executable("rg")
+    set grepprg=rg\ --vimgrep
+    set grepformat^=%f:%l:%c:%m
+endif

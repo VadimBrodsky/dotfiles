@@ -116,6 +116,6 @@ set undofile                    " Use the undo file to store undo history
 
 " Vim Grep
 if executable("rg")
-    set grepprg=rg\ --vimgrep
-    set grepformat^=%f:%l:%c:%m
+  set grepprg=rg\ --vimgrep
+  set grepformat^=%f:%l:%c:%m
 endif

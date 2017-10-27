@@ -16,7 +16,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens in pairs
   Plug 'vimwiki/vimwiki'           " Personal Vim Wiki
   Plug 'w0rp/ale'                  " Asynchronous Lint Engine
-  Plug 'vim-scripts/YankRing.vim'  " Better yank history
+  " Plug 'vim-scripts/YankRing.vim'  " Better yank history
 
   " Plug 'scrooloose/syntastic'      " Syntax checking for vim
   " Plug 'Shougo/unite.vim'          " vimfiler dependency

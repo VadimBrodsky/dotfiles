@@ -25,6 +25,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+  " Seamless navigation between tmux panes and vim splits
+  Plug 'christoomey/vim-tmux-navigator'
+
   " Additional Languages
   Plug 'sheerun/vim-polyglot'      " Additional languages
   Plug 'nikvdp/ejs-syntax'         " Ejs syntax

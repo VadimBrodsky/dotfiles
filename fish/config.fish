@@ -8,6 +8,6 @@
 fundle plugin 'edc/bass'
 fundle init
 
-set -U EDITOR nvim
+set EDITOR nvim
 alias vim=nvim
 alias g=git

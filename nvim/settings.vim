@@ -36,7 +36,7 @@ endfunc
 set ruler                       " Show cursor position
 " set cursorline                  " Highlight current line
 set colorcolumn=85               " Vertical ruler for preferred line width
-set textwidth=79                 " Hard-wrap long lines as you type them.
+" set textwidth=79                 " Hard-wrap long lines as you type them.
 
 
 " Status Line

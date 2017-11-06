@@ -6,7 +6,7 @@
 
 "Plug
 call plug#begin('~/.config/nvim/plugged')
-  Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file, buffer, mru, tag, etc finder
+  " Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file, buffer, mru, tag, etc finder
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'tpope/vim-surround'        " Quoting/parenthesizing made simple
   Plug 'tpope/vim-rails'           " Ruby on Rails power tools
@@ -21,6 +21,11 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'scrooloose/syntastic'      " Syntax checking for vim
   " Plug 'Shougo/unite.vim'          " vimfiler dependency
   " Plug 'Shougo/vimfiler.vim'       " File explorer
+
+
+  " Fuzzy Finder
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -59,9 +64,16 @@ call plug#end()
 
 
 " ctrp.vim -- https://github.com/ctrlpvim/ctrlp.vim
-let g:ctrlp_user_command = 'rg --files %s'
-let g:ctrlp_use_caching = 0
+" let g:ctrlp_user_command = 'rg --files %s'
+" let g:ctrlp_use_caching = 0
 
+" fzf.vim use rg
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
 " UltiSnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.

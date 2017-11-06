@@ -1,5 +1,3 @@
-"----------------------------- Key Mappings ----------------------------------
-" Space is my leader
 let mapleader = "\<Space>"
 
 
@@ -88,12 +86,12 @@ nmap <leader>vo :source $MYVIMRC<cr>
 " Buffer Motions - b
 " --------------------------------------------------------------------------
 nmap <leader><tab> :b#<cr>
-nmap <leader>bb :CtrlPBuffer<Cr>
+nmap <leader>bb :Buffers>
 nmap <Leader>bd :exe "bn\|:bd#"<Cr>
 
 " Project Motions - p
 " --------------------------------------------------------------------------
-nmap <leader>pf :CtrlP <Cr>
+nmap <leader>pf :FZF <Cr>
 
 
 " Splits Motions - w
@@ -179,7 +177,6 @@ nmap <leader>ccr :RandomColorScheme<cr>
   autocmd VimResized * :wincmd=  
   " save file on focus lost
   autocmd FocusLost * :wa
-
 
 " Command Aliases
 " --------------------------------------------------------------------------

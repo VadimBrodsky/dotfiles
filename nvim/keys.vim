@@ -86,7 +86,7 @@ nmap <leader>vo :source $MYVIMRC<cr>
 " Buffer Motions - b
 " --------------------------------------------------------------------------
 nmap <leader><tab> :b#<cr>
-nmap <leader>bb :Buffers>
+nmap <leader>bb :Buffers<cr>
 nmap <Leader>bd :exe "bn\|:bd#"<Cr>
 
 " Project Motions - p

@@ -115,9 +115,15 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " ALE
 let g:ale_lint_on_text_changed = 'normal'
-let g:ale_linters = {
-\ 'typescript': ['tslint'],
-\}
+let g:ale_linters = {}
+let g:ale_linters['typescript'] = ['tslint']
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1

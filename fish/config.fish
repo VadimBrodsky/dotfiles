@@ -11,7 +11,7 @@
 # node
 # https://github.com/brigand/fast-nvm-fish
 set -U fish_user_paths
-nvm use 8.9.1
+nvm use 8.9.4
 
 # yarn
 set -xg PATH usr/local/bin/yarn $PATH 

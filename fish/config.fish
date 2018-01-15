@@ -5,8 +5,8 @@
 # fundle self-update
 
 ## Fundle plugins, run fundle install to install them
-fundle plugin 'edc/bass'
-fundle init
+# fundle plugin 'edc/bass'
+# fundle init
 
 # node
 # https://github.com/brigand/fast-nvm-fish

@@ -8,6 +8,11 @@
 # fundle plugin 'edc/bass'
 # fundle init
 
+# ruby
+set PATH /usr/local/bin $PATH
+set PATH $HOME/.rbenv/shims $PATH
+rbenv rehash >/dev/null ^&1
+
 # node
 # https://github.com/brigand/fast-nvm-fish
 set -U fish_user_paths

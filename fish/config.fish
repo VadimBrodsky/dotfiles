@@ -18,6 +18,9 @@ rbenv rehash >/dev/null ^&1
 set -U fish_user_paths
 nvm use 8.9.4
 
+# python 2 for mac
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # yarn
 set -xg PATH usr/local/bin/yarn $PATH 
 

@@ -1,15 +1,15 @@
 - defaults:
-  link:
-    relink: true
+    link:
+      relink: true
 
 - clean: ['~']
 
 - link:
-  ~/.dotfiles: ''
-  ~/.gemrc: gemrc
-  ~/.gitconfig: gitconfig
-  ~/.gitignore: gitignore
-  ~/.tmux.conf: tmux.conf
-  ~/.config/nvim:
-    create: true
-    path: nvim
+    ~/.dotfiles: ''
+    ~/.gemrc: gemrc
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
+    ~/.tmux.conf: tmux.conf
+    ~/.config/nvim:
+        create: true
+        path: nvim

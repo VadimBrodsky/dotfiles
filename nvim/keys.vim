@@ -75,6 +75,10 @@ nnoremap <leader>= :wincmd =<cr>
 " nmap <leader>w- :vnew <C-r>=escape(expand("
 
 
+" ALE mappings - a
+" --------------------------------------------------------------------------
+nmap <leader>af :ALEFix<cr>
+
 " Tab mappings - t
 " --------------------------------------------------------------------------
 nmap <leader>tn :tabnew<cr>

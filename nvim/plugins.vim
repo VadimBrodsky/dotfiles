@@ -13,9 +13,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'        " Git wrapper
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'airblade/vim-gitgutter'    " Git gutter
-  Plug 'scrooloose/syntastic'      " Syntax checking for vim
+  " Plug 'scrooloose/syntastic'      " Syntax checking for vim
   Plug 'jiangmiao/auto-pairs'      " Insrt or delete brackets, parens in pairs
   Plug 'vimwiki/vimwiki'           " Personal Wiki for Vim
+  Plug 'w0rp/ale'
 
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -82,8 +83,8 @@ let g:airline#extensions#tagbar#enabled = 1
 
 " Syntastic settings
 " set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
@@ -93,3 +94,8 @@ set statusline+=%*
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#sources = ['file', 'ultisnips']
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_javascript_prettier_use_local_config = 1
+

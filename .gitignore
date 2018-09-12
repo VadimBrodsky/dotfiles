@@ -5,4 +5,5 @@
 *.swo
 /_backup/!.keep
 /_temp/!.keep
-
+yarn/global/node_modules
+nvim/spell

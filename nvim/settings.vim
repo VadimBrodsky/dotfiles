@@ -31,7 +31,7 @@ function! NumberToggle()
 endfunc
 
 set ruler                       " Show cursor position
-set cursorline                  " Highlight current line
+" set cursorline                  " Highlight current line
 set colorcolumn=0               " Vertical ruler for preferred line width
 " set textwidth=0                 " Hard-wrap long lines as you type them.
 
@@ -59,9 +59,10 @@ set showmode                    " Display the mode you're in
 
 " Tell Vim which characters to show for expanded TABs,
 " trailing whitespace, and end-of-lines. VERY useful!
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
+set listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:+
+" if &listchars ==# 'eol:$'
+"   set listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:+
+" endif
 set list                " Show problematic characters.
 
 
@@ -105,3 +106,11 @@ set hidden                      " Allow buffer change w/o saving
 " Splits
 set splitbelow                  " Split down and focus
 set splitright                  " Split right and focus
+
+
+" Language Specific
+" GoLang
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4

@@ -46,6 +46,11 @@ nmap <leader>vi :tabedit ~/.config/nvim/init.vim<cr>
 nmap <leader>vo :source $MYVIMRC<cr>
 
 
+" ALE Motions - a
+" --------------------------------------------------------------------------
+nmap <leader>af :ALEFix<Cr>
+nmap <leader>gp :silent %!prettier --stdin --trailing-comma all --single-quote<CR>
+
 
 " Buffer Motions - b
 " --------------------------------------------------------------------------
@@ -109,16 +114,20 @@ nnoremap <leader>cn :call NumberToggle()<cr>
 
 " Auto Commands
 " --------------------------------------------------------------------------
-  " :h autocmd-events
-  " when a help file is open remap the q key to :q<cr>
-  autocmd Filetype help nnoremap <buffer> q :q<cr>
-  " automatically rebalance windows on Vim resize
-  autocmd VimResized * :wincmd=  
+" :h autocmd-events
+" when a help file is open remap the q key to :q<cr>
+autocmd Filetype help nnoremap <buffer> q :q<cr>
+" automatically rebalance windows on Vim resize
+autocmd VimResized * :wincmd=
 
 
 " Command Aliases
 " --------------------------------------------------------------------------
-  command! Q q
-  command! Qall qall
-  command! QA qall
-  command! E e
+command! Q q
+command! Qall qall
+command! QA qall
+command! E e
+
+" command ElmFormat :silent %!elm-format --stdin
+nnoremap ef :ElmFormat<cr>
+autocmd FileType elm autocmd BufWritePre <buffer> :ElmFormat

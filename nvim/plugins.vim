@@ -14,21 +14,25 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'airblade/vim-gitgutter'    " Git gutter
   Plug 'jiangmiao/auto-pairs'      " Insrt or delete brackets, parens in pairs
+  Plug 'junegunn/goyo.vim'         " Distraction-free writing in Vim
+  Plug 'w0rp/ale'                  " Asynchronous Lint Engine
+  Plug 'sheerun/vim-polyglot'      " Additional languages
+
 
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Additional Languages
-  Plug 'ElmCast/elm-vim'           " Elm
+  " Plug 'ElmCast/elm-vim'           " Elm
 
   " Typescript
-  Plug 'leafgarland/typescript-vim'
-  Plug 'Shougo/vimproc.vim'
-  Plug 'Quramy/tsuquyomi'
+  " Plug 'leafgarland/typescript-vim'
+  " Plug 'Shougo/vimproc.vim'
+  " Plug 'Quramy/tsuquyomi'
 
   " Airline
-  Plug 'vim-airline/vim-airline'   " Status / Tabline
-  Plug 'vim-airline/vim-airline-themes'
+  " Plug 'vim-airline/vim-airline'   " Status / Tabline
+  " Plug 'vim-airline/vim-airline-themes'
 
   " Vim-Snipmate and dependencies
   " Plug 'MarcWeber/vim-addon-mw-utils'
@@ -39,6 +43,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Themes
   Plug 'crusoexia/vim-monokai'
+  Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 
@@ -56,28 +61,43 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " let g:UltiSnipsEditSplit="vertical"
 
 " Airline
-let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ' '
-let g:airline#extensions#tabline#right_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
-let g:airline_theme='kolor'
-let g:airline#extensions#tagbar#enabled = 1
+" let g:airline#extensions#tabline#enabled = 2
+" let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#right_sep = ' '
+" let g:airline#extensions#tabline#right_alt_sep = '|'
+" let g:airline_left_sep = ' '
+" let g:airline_left_alt_sep = '|'
+" let g:airline_right_sep = ' '
+" let g:airline_right_alt_sep = '|'
+" let g:airline_theme='kolor'
+" let g:airline#extensions#tagbar#enabled = 1
 
 
 " Syntastic settings
 " set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+
+
+" ALE
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_linters = {}
+let g:ale_linters['typescript'] = ['tsserver', 'typecheck', 'tslint']
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['json'] = ['prettier']
+let g:ale_fixers['go'] = ['gofmt', 'goimports']
+let g:ale_fixers['typescript'] = ['prettier']
+
+let g:ale_fix_on_save = 0
+let g:ale_javascript_prettier_options = '--arrow-parens always --print-width 90 --tab-width 2  --single-quote true --trailing-comma all'
 
 
 " Deoplete settings

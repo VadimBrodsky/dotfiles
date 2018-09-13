@@ -12,3 +12,4 @@ alias vim=nvim
 if test -e ~/.config/fish/fish_local.fish
   . ~/.config/fish/fish_local.fish
 end
+source ~/.asdf/asdf.fish

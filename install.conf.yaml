@@ -4,10 +4,6 @@
 
 - clean: ['~', '~/.config']
 
-- shell:
-    - mkdir -p nvim/autoload
-    - wget -N  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O nvim/autoload/plug.vim
-
 - link:
     ~/.gemrc: ruby/gemrc
     ~/.gitconfig: git/gitconfig
@@ -25,4 +21,14 @@
     ~/.config/fish/functions:
         create: true
         path: fish/functions
+    ~/.config/fish/completions:
+        create: true
+        path: fish/completions
+
+- shell:
+  - mkdir -p nvim/autoload
+  - wget -N  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O nvim/autoload/plug.vim
+  - if [ ! -d ~/.asdf ]; then git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.1; fi
+  - cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+
 

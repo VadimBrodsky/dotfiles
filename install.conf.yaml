@@ -10,9 +10,9 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.tmux.conf: tmux/tmux.conf
-    #~/.config/yarn/global:
-    #    create: true
-    #    path: yarn/global
+    ~/.config/alacritty/alacritty.yml:
+        create: true
+        path: alacritty/alacritty.yml
     ~/.config/nvim:
         create: true
         path: nvim

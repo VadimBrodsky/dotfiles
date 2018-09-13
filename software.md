@@ -1,12 +1,13 @@
 # Software
 
-## Command Line
+## Command Line Tools
 - git
 - fish
 - tmux
+- asdf
 - neovim
 - docker
-- ctop
+- yarn
 
 ## GUI
 - Brave
@@ -15,3 +16,6 @@
 - Postman
 - Insomnia
 - Alacritty
+- VLC
+- Spotify
+- Slack

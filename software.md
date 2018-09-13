@@ -5,11 +5,11 @@
 - fish
 - tmux
 - htop
-- asdf
 - neovim
 - docker
 - yarn
-- rg
+- [asdf](https://github.com/asdf-vm/asdf)
+- [rg](https://github.com/BurntSushi/ripgrep)
 
 ## GUI
 - Brave
@@ -17,7 +17,7 @@
 - Firefox
 - Postman
 - Insomnia
-- Alacritty
 - VLC
 - Spotify
 - Slack
+- [Alacritty](https://github.com/jwilm/alacritty)

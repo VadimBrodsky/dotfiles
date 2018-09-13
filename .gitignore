@@ -7,3 +7,4 @@
 /_temp/!.keep
 yarn/global/node_modules
 nvim/spell
+nvim/autoload/plug.vim

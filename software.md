@@ -4,10 +4,12 @@
 - git
 - fish
 - tmux
+- htop
 - asdf
 - neovim
 - docker
 - yarn
+- rg
 
 ## GUI
 - Brave

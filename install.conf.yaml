@@ -4,12 +4,9 @@
 
 - clean: ['~', '~/.config']
 
-- shell:
-    - mkdir -p nvim/autoload
-    - wget -N  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O nvim/autoload/plug.vim
-
 - link:
     ~/.gemrc: ruby/gemrc
+    ~/.default-gems: ruby/default-gems
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.tmux.conf: tmux/tmux.conf
@@ -25,4 +22,21 @@
     ~/.config/fish/functions:
         create: true
         path: fish/functions
+    ~/.config/fish/completions:
+        create: true
+        path: fish/completions
+
+- shell:
+  # vim plug
+  - mkdir -p nvim/autoload
+  - wget -N  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O nvim/autoload/plug.vim
+  # asdf
+  - git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.5.1
+  - cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+  # node
+  - asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  # ruby
+  - asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+  # rust
+  - asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 

@@ -1,12 +1,15 @@
 # Software
 
-## Command Line
+## Command Line Tools
 - git
 - fish
 - tmux
+- htop
 - neovim
 - docker
-- ctop
+- yarn
+- [asdf](https://github.com/asdf-vm/asdf)
+- [rg](https://github.com/BurntSushi/ripgrep)
 
 ## GUI
 - Brave
@@ -14,4 +17,7 @@
 - Firefox
 - Postman
 - Insomnia
-- Alacritty
+- VLC
+- Spotify
+- Slack
+- [Alacritty](https://github.com/jwilm/alacritty)

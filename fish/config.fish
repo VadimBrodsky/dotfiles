@@ -9,6 +9,9 @@ alias g=git
 alias gs='git status'
 alias vim=nvim
 
+# asdf
+source ~/.asdf/asdf.fish
+
 if test -e ~/.config/fish/fish_local.fish
   . ~/.config/fish/fish_local.fish
 end

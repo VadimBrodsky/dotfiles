@@ -5,7 +5,8 @@
 - clean: ['~', '~/.config']
 
 - shell:
-    - wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O nvim/autoload/plug.vim
+    - mkdir -p nvim/autoload
+    - wget -N  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O nvim/autoload/plug.vim
 
 - link:
     ~/.gemrc: ruby/gemrc

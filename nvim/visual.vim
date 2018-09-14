@@ -21,5 +21,9 @@ colorscheme material-theme
 "highlight Normal ctermbg=none
 "highlight nonText ctermbg=none
 
-" Use JavaScript mode for es6 files
-autocmd BufNewFile,BufRead *.es6   set syntax=javascript
+hi htmlArg gui=italic
+hi Comment gui=italic
+hi Type    gui=italic
+hi htmlArg cterm=italic
+hi Comment cterm=italic
+hi Type    cterm=italic

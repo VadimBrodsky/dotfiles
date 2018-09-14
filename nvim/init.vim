@@ -26,3 +26,5 @@ source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/abbr.vim
 source $HOME/.config/nvim/visual.vim
 source $HOME/.config/nvim/keys.vim
+source $HOME/.config/nvim/macros.vim
+

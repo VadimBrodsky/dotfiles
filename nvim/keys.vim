@@ -106,12 +106,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " nmap <leader>+ <Plug>AirlineSelectNextTab
 
 
-" Toggles
-" --------------------------------------------------------------------------
-" Toggle between normal and relative numbering.
-nnoremap <leader>cn :call NumberToggle()<cr>
-
-
 " Auto Commands
 " --------------------------------------------------------------------------
 " :h autocmd-events
@@ -127,6 +121,7 @@ command! Q q
 command! Qall qall
 command! QA qall
 command! E e
+command! NumberToggle call NumberToggle()<cr>
 
 " command ElmFormat :silent %!elm-format --stdin
 nnoremap ef :ElmFormat<cr>

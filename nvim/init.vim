@@ -22,7 +22,9 @@
 " :browse set<cr>
 
 source $HOME/.config/nvim/settings.vim
+source $HOME/.config/nvim/commands.vim
 source $HOME/.config/nvim/plugins.vim
-source $HOME/.config/nvim/abbr.vim
 source $HOME/.config/nvim/visual.vim
 source $HOME/.config/nvim/keys.vim
+source $HOME/.config/nvim/languages.vim
+source $HOME/.config/nvim/abbr.vim

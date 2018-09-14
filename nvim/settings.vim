@@ -15,24 +15,13 @@ set linespace=20                " Set line-spacing to minimum
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
 
 
-
 " Line Numbers
 set number                      " Show line numbers
 " set relativenumber               " Set relative numbers
 
-" Relative numbering
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set nornu
-    set number
-  else
-    set rnu
-  endif
-endfunc
-
 set ruler                       " Show cursor position
 " set cursorline                  " Highlight current line
-set colorcolumn=0               " Vertical ruler for preferred line width
+set colorcolumn=80              " Vertical ruler for preferred line width
 " set textwidth=0                 " Hard-wrap long lines as you type them.
 
 
@@ -48,27 +37,19 @@ set showmode                    " Display the mode you're in
 
 
 " list chars
-" set list                        " Show invisible characters
-" set listchars=""                " Reset the listchars
-" set listchars=tab:\ \           " a tab should display as "  ", trailing whitespace as "."
-" set listchars+=trail:.          " show trailing spaces as dots
-" set listchars+=extends:>        " The character to show in the last column when wrap is
-"                                 " off and the line continues beyond the right of the screen
-" set listchars+=precedes:<       " The character to show in the last column when wrap is
-"                                 " off and the line continues beyond the left of the screen
-
-" Tell Vim which characters to show for expanded TABs,
-" trailing whitespace, and end-of-lines. VERY useful!
-set listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:+
-" if &listchars ==# 'eol:$'
-"   set listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:+
-" endif
-set list                " Show problematic characters.
+set list                        " Show invisible characters
+set listchars=""                " Reset the listchars
+set listchars=tab:\ \           " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.          " show trailing spaces as dots
+set listchars+=extends:>        " The character to show in the last column when wrap is
+                                " off and the line continues beyond the right of the screen
+set listchars+=precedes:<       " The character to show in the last column when wrap is
+                                " off and the line continues beyond the left of the screen
 
 
 " Also highlight all tabs and trailing whitespace characters.
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$\|\t/
+" highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+" match ExtraWhitespace /\s\+$\|\t/
 
 
 " Command Line Mode
@@ -106,11 +87,3 @@ set hidden                      " Allow buffer change w/o saving
 " Splits
 set splitbelow                  " Split down and focus
 set splitright                  " Split right and focus
-
-
-" Language Specific
-" GoLang
-au FileType go set noexpandtab
-au FileType go set shiftwidth=4
-au FileType go set softtabstop=4
-au FileType go set tabstop=4

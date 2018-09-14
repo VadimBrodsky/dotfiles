@@ -18,26 +18,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'w0rp/ale'                  " Asynchronous Lint Engine
   Plug 'sheerun/vim-polyglot'      " Additional languages
 
-
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-  " Additional Languages
-  " Plug 'ElmCast/elm-vim'           " Elm
-
-  " Typescript
-  " Plug 'leafgarland/typescript-vim'
-  " Plug 'Shougo/vimproc.vim'
-  " Plug 'Quramy/tsuquyomi'
-
-  " Airline
-  " Plug 'vim-airline/vim-airline'   " Status / Tabline
-  " Plug 'vim-airline/vim-airline-themes'
-
-  " Vim-Snipmate and dependencies
-  " Plug 'MarcWeber/vim-addon-mw-utils'
-  " Plug 'tomtom/tlib_vim'
-  " Plug 'garbas/vim-snipmate'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 
@@ -59,30 +42,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
-
-" Airline
-" let g:airline#extensions#tabline#enabled = 2
-" let g:airline#extensions#tabline#fnamemod = ':t'
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline#extensions#tabline#right_sep = ' '
-" let g:airline#extensions#tabline#right_alt_sep = '|'
-" let g:airline_left_sep = ' '
-" let g:airline_left_alt_sep = '|'
-" let g:airline_right_sep = ' '
-" let g:airline_right_alt_sep = '|'
-" let g:airline_theme='kolor'
-" let g:airline#extensions#tagbar#enabled = 1
-
-
-" Syntastic settings
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
 
 
 " ALE

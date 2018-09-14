@@ -49,12 +49,14 @@ nmap <leader>vo :source $MYVIMRC<cr>
 " ALE Motions - a
 " --------------------------------------------------------------------------
 nmap <leader>af :ALEFix<Cr>
-nmap <leader>gp :silent %!prettier --stdin --trailing-comma all --single-quote<CR>
+nmap <leader>ah :ALEHover<Cr>
+nmap <leader>ad :ALEDetail<Cr>
+nmap <leader>ag :ALEGoToDefinition<Cr>
 
 
 " Buffer Motions - b
 " --------------------------------------------------------------------------
-nmap <leader><tab> :b#<cr>
+nmap <leader><tab> :b#<Cr>
 nmap <leader>bb :CtrlPBuffer <Cr>
 
 
@@ -69,7 +71,7 @@ nmap <leader>- :split<Cr>
 nmap <leader>/ :vsp<Cr>
 
 " Current buffer to new tab
-nmap <leader>wm :tabedit %<Cr>
+nmap <leader>wt :tabedit %<Cr>
 
 " Resize splits
 nnoremap <leader>0 :wincmd _<cr> :wincmd \|<cr>
@@ -92,19 +94,6 @@ nmap <leader>tl :tablast<cr>
 " nmap <leader>tn :tabnext<cr>
 " nmap <leader>tp :tabprevious<cr>
 
-" Airline tab mappings
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-" nmap <leader>- <Plug>AirlineSelectPrevTab
-" nmap <leader>+ <Plug>AirlineSelectNextTab
-
 
 " Auto Commands
 " --------------------------------------------------------------------------
@@ -115,14 +104,3 @@ autocmd Filetype help nnoremap <buffer> q :q<cr>
 autocmd VimResized * :wincmd=
 
 
-" Command Aliases
-" --------------------------------------------------------------------------
-command! Q q
-command! Qall qall
-command! QA qall
-command! E e
-command! NumberToggle call NumberToggle()<cr>
-
-" command ElmFormat :silent %!elm-format --stdin
-nnoremap ef :ElmFormat<cr>
-autocmd FileType elm autocmd BufWritePre <buffer> :ElmFormat

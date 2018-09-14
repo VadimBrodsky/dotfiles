@@ -39,6 +39,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Move lines up and down
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-1<CR>==
+
 " Copy the entire buffer into the system register
 " nmap <leader>co ggVG*y
 

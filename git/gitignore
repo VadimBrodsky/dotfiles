@@ -11,3 +11,4 @@ tmp/**/*
 !tmp/cache/.keep
 .ruby-version
 tags
+node_modules

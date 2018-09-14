@@ -104,15 +104,22 @@ let g:UltiSnipsJumpBackwardTrigger="<c-K>"
 " let g:syntastic_check_on_wq = 0
 
 " ALE
+let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_linters = {}
-let g:ale_linters['typescript'] = ['tslint']
+" let g:ale_linters['typescript'] = ['tsserver', 'typecheck', 'tslint']
+let g:ale_linters['typescript'] = ['tsserver', 'typecheck']
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['json'] = ['prettier']
+let g:ale_fixers['css'] = ['prettier']
+let g:ale_fixers['typescript'] = ['prettier']
+let g:ale_fixers['markdown'] = ['prettier']
+let g:ale_fixers['html'] = ['prettier']
 
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+let g:ale_fix_on_save = 0
+let g:ale_javascript_prettier_options = '--arrow-parens always --print-width 90 --tab-width 2  --single-quote true --trailing-comma all'
 
 
 " Deoplete settings

@@ -44,9 +44,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-colorscheme-switcher'
   Plug 'flazz/vim-colorschemes'
+  Plug 'NLKNguyen/papercolor-theme'
+  Plug 'altercation/vim-colors-solarized'
   Plug 'crusoexia/vim-monokai'
-  Plug 'jdkanani/vim-material-theme'
   Plug 'dracula/vim'
+  Plug 'flazz/vim-colorschemes'
+  Plug 'jdkanani/vim-material-theme'
+  Plug 'rakr/vim-two-firewatch'
+  Plug 'xolox/vim-colorscheme-switcher'
+  Plug 'xolox/vim-misc'
 call plug#end()
 
 

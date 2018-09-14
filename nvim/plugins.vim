@@ -37,19 +37,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'sheerun/vim-polyglot'      " Additional languages
   Plug 'nikvdp/ejs-syntax'         " Ejs syntax
 
-  " Typescript
-  Plug 'leafgarland/typescript-vim'
-  Plug 'Shougo/vimproc.vim'
-  Plug 'Quramy/tsuquyomi'
-
-  " Airline
-  " Plug 'vim-airline/vim-airline'   " Status / Tabline
-  " Plug 'vim-airline/vim-airline-themes'
-
-  " Vim-Snipmate and dependencies
-  " Plug 'MarcWeber/vim-addon-mw-utils'
-  " Plug 'tomtom/tlib_vim'
-  " Plug 'garbas/vim-snipmate'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 

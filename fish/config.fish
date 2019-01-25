@@ -30,6 +30,14 @@ set -xg PATH usr/local/bin/yarn $PATH
 # editor
 set EDITOR nvim
 
+# fisher
+# https://github.com/jorgebucaran/fisher
+if not functions -q fisher
+  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+  curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+  fish -c fisher
+end
+
 # simple aliases
 alias ll='ls -alF'
 alias la='ls -A'

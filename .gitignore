@@ -12,3 +12,8 @@
 *.spl
 .DS_Store
 *.sug
+fish/functions/__z.fish
+fish/functions/__z_add.fish
+fish/functions/__z_clean.fish
+fish/functions/__z_complete.fish
+fish/functions/fisher.fish

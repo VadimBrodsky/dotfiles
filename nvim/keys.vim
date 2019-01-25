@@ -92,6 +92,8 @@ nmap <leader>af :ALEFix<Cr>
 nmap <leader>ah :ALEHover<Cr>
 nmap <leader>ad :ALEDetail<Cr>
 nmap <leader>ag ::ALEGoToDefinition<Cr>
+nmap <leader>an ::ALENext<Cr>
+nmap <leader>aN ::ALEPrevious<Cr>
 nnoremap gp :silent %!prettier --stdin --trailing-comma all --single-quote<CR>
 
 " Buffer Motions - b

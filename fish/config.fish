@@ -21,6 +21,9 @@ nvm use 10.15.0
 # python 2 for mac
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
+# rust
+export PATH="/Users/vbrodsky/.cargo/bin:$PATH"
+
 # yarn
 set -xg PATH usr/local/bin/yarn $PATH 
 

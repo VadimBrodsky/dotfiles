@@ -16,7 +16,7 @@ rbenv rehash >/dev/null ^&1
 # node
 # https://github.com/brigand/fast-nvm-fish
 set -U fish_user_paths
-nvm use 8.9.4
+nvm use 10.15.0
 
 # python 2 for mac
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"

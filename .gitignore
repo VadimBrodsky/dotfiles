@@ -14,4 +14,4 @@
 *.sug
 fish/functions/__*
 fish/functions/fisher.fish
-nvim/autoload/plug.vim
+nvim/autoload/*

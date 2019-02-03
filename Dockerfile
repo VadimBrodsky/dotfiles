@@ -45,6 +45,9 @@ RUN curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripg
 ADD . /root/dotfiles
 RUN ~/dotfiles/install
 
+# Fisher
+RUN curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
 # Vim Plug
 RUN mkdir -p ~/.config/nvim/autoload \
     && wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.config/nvim/autoload/plug.vim \

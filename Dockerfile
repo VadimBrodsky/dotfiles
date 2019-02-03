@@ -1,4 +1,3 @@
-# https://github.com/thornycrackers/docker-neovim/blob/master/Dockerfile
 FROM ubuntu:18.04
 
 # Better terminal support
@@ -35,9 +34,22 @@ RUN apt-get update && apt-get install -y \
       nodejs \
       yarn
 
-# Install Neovim plugins
-RUN nvim -i NONE -c PlugInstall -c quitall > /dev/null 2>&1
+WORKDIR /root
+
+# RipGrep
+RUN curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb \
+    && dpkg -i ripgrep_0.10.0_amd64.deb \
+    && rm ripgrep_0.10.0_amd64.deb
+
+# Dotfiles
+ADD . /root/dotfiles
+RUN ~/dotfiles/install
+
+# Vim Plug
+RUN mkdir -p ~/.config/nvim/autoload \
+    && wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.config/nvim/autoload/plug.vim \
+    && nvim -i NONE -c PlugInstall -c quitall > /dev/null 2>&1
 
 
 CMD ["/usr/bin/fish"]
-
+# https://github.com/thornycrackers/docker-neovim/blob/master/Dockerfile

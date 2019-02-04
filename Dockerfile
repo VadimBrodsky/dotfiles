@@ -51,8 +51,10 @@ RUN curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fishe
 # Vim Plug
 RUN mkdir -p ~/.config/nvim/autoload \
     && wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.config/nvim/autoload/plug.vim \
-    && nvim -i NONE -c PlugInstall -c quitall > /dev/null 2>&1
+    && nvim -i NONE -c PlugInstall -c quitall > /dev/null 2>&1 \
+    && nvim -i NONE -c UpdateRemotePlugins -c quitall > /dev/null 2>&1
 
+RUN npm install -g neovim
 
 CMD ["/usr/bin/fish"]
 # https://github.com/thornycrackers/docker-neovim/blob/master/Dockerfile

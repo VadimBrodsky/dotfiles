@@ -44,6 +44,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Themes
   Plug 'crusoexia/vim-monokai'
   Plug 'altercation/vim-colors-solarized'
+  Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 

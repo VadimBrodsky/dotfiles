@@ -49,6 +49,9 @@ nmap <leader>vo :source $MYVIMRC<cr>
 " ALE Motions - a
 " --------------------------------------------------------------------------
 nmap <leader>af :ALEFix<Cr>
+nmap <leader>ah :ALEHover<Cr>
+nmap <leader>ad :ALEDetail<Cr>
+nmap <leader>ag :ALEGoToDefinition<Cr>
 nmap <leader>gp :silent %!prettier --stdin --trailing-comma all --single-quote<CR>
 
 

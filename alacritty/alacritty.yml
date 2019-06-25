@@ -31,7 +31,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: true
+  decorations: full
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -78,7 +78,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 9.0
+  size: 10.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -97,7 +97,7 @@ font:
   # screens and make reading text a little easier.
   # On X11 it is possible to change the DPI for each instance of alacritty by using
   # `WINIT_HIDPI_FACTOR=1.0 alacritty` to scale the font.
-  scale_with_dpi: true
+  # scale_with_dpi: true
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -105,11 +105,11 @@ font:
   use_thin_strokes: false
 
 # Should display the render timer
-render_timer: false
+# render_timer: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
+# custom_cursor_colors: false
 
 # Colors (Material Theme)
 colors:
@@ -167,7 +167,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.98
+background_opacity: 0.95
 
 # Mouse bindings
 #
@@ -204,14 +204,14 @@ mouse:
   # scrolling for applications like `man`.
   #
   # To disable this completely, set `faux_scrollback_lines` to 0.
-  faux_scrollback_lines: 1
+  # faux_scrollback_lines: 1
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 dynamic_title: true
 
-hide_cursor_when_typing: true
+# hide_cursor_when_typing: true
 
 # Style of the cursor
 #
@@ -219,10 +219,10 @@ hide_cursor_when_typing: true
 # - Block
 # - Underline
 # - Beam
-cursor_style: Beam
+cursor.style: Beam
 
 # Whether the cursor should be a hollow block on window focus loss
-unfocused_hollow_cursor: true
+# unfocused_hollow_cursor: true
 
 # Live config reload (changes require restart)
 live_config_reload: true

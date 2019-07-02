@@ -9,9 +9,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'ctrlpvim/ctrlp.vim'        " Fuzzy file, buffer, mru, tag, etc finder
   Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'tpope/vim-surround'        " Quoting/parenthesizing made simple
-  Plug 'tpope/vim-rails'           " Ruby on Rails power tools
+  " Plug 'tpope/vim-rails'           " Ruby on Rails power tools
   Plug 'tpope/vim-fugitive'        " Git wrapper
-  Plug 'tpope/vim-commentary'      " Comment stuff out
   Plug 'airblade/vim-gitgutter'    " Git gutter
   Plug 'jiangmiao/auto-pairs'      " Insert or delete brackets, parens in pairs
   Plug 'vimwiki/vimwiki'           " Personal Vim Wiki
@@ -19,19 +18,17 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'vim-scripts/YankRing.vim'  " Better yank history
 
   " Plug 'scrooloose/syntastic'      " Syntax checking for vim
-  " Plug 'Shougo/unite.vim'          " vimfiler dependency
-  " Plug 'Shougo/vimfiler.vim'       " File explorer
-
-
-  " Fuzzy Finder
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/goyo.vim'
 
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Seamless navigation between tmux panes and vim splits
-  Plug 'christoomey/vim-tmux-navigator'
+  " Plug 'christoomey/vim-tmux-navigator'
+
+  " fuzzy finder for vim
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
   " Additional Languages
   Plug 'sheerun/vim-polyglot'      " Additional languages
@@ -42,14 +39,17 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Themes
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'sonph/onehalf', {'rtp': 'vim/'}
   Plug 'altercation/vim-colors-solarized'
   Plug 'crusoexia/vim-monokai'
   Plug 'dracula/vim'
   Plug 'flazz/vim-colorschemes'
   Plug 'jdkanani/vim-material-theme'
   Plug 'rakr/vim-two-firewatch'
-  Plug 'xolox/vim-colorscheme-switcher'
-  Plug 'xolox/vim-misc'
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'whatyouhide/vim-gotham'
+  Plug 'christophermca/meta5'
+  Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
 
@@ -57,14 +57,6 @@ call plug#end()
 " let g:ctrlp_user_command = 'rg --files %s'
 " let g:ctrlp_use_caching = 0
 
-" let $FZF_DEFAULT_COMMAND = 'rg --column --line-number --no-heading --color=always '
-" fzf.vim use rg
-" cPlug '/usr/local/opt/fzfommand! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --no-heading --color=always'.shellescape(<q-args>), 1,
-"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
-"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-"   \   <bang>0)
 
 " UltiSnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -73,22 +65,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-K>"
 " If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
-
-" Airline
-" let g:airline#extensions#tabline#enabled = 2
-" let g:airline#extensions#tabline#fnamemod = ':t'
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline#extensions#tabline#right_sep = ' '
-" let g:airline#extensions#tabline#right_alt_sep = '|'
-" let g:airline_left_sep = ' '
-" let g:airline_left_alt_sep = '|'
-" let g:airline_right_sep = ' '
-" let g:airline_right_alt_sep = '|'
-" let g:airline_theme='kolor'
-" let g:airline#extensions#tagbar#enabled = 1
-" let g:airline#extensions#ale#enabled = 1
-
 
 " Syntastic settings
 " set statusline+=%#warningmsg#
@@ -107,20 +83,22 @@ let g:UltiSnipsJumpBackwardTrigger="<c-K>"
 " ALE
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'normal'
-let g:ale_linters = {}
+" let g:ale_linters = {}
 " let g:ale_linters['typescript'] = ['tsserver', 'typecheck', 'tslint']
-let g:ale_linters['typescript'] = ['tsserver', 'typecheck']
+" let g:ale_linters['typescript'] = ['tsserver', 'typecheck']
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fixers['json'] = ['prettier']
-let g:ale_fixers['css'] = ['prettier']
-let g:ale_fixers['typescript'] = ['prettier']
-let g:ale_fixers['markdown'] = ['prettier']
-let g:ale_fixers['html'] = ['prettier']
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'json': ['prettier'],
+\   'typescript': ['prettier'],
+\   'markdown': ['prettier'],
+\   'html': ['prettier'],
+\   'yaml': ['prettier'],
+\}
 
 let g:ale_fix_on_save = 0
-let g:ale_javascript_prettier_options = '--arrow-parens always --print-width 90 --tab-width 2  --single-quote true --trailing-comma all'
+let g:ale_javascript_prettier_options = '--arrow-parens always --print-width 100 --tab-width 2  --single-quote true --trailing-comma all'
 
 
 " Deoplete settings
@@ -130,3 +108,14 @@ let g:deoplete#enable_at_startup = 1
 
 " Vimfiler
 " let g:vimfiler_as_default_explorer = 1
+
+" Goyo
+let g:goyo_width = 120
+
+" FZF
+" Command for git grep
+" - fzf#vim#grep(command, with_column, [options], [fullscreen])
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)

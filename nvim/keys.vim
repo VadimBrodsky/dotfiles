@@ -67,7 +67,7 @@ vnoremap <leader>P "+P
 
 " Yank Ring
 " --------------------------------------------------------------------------
-nnoremap <leader>ys :YRShow<CR>
+" nnoremap <leader>ys :YRShow<CR>
 
 
 " File Motions - f
@@ -94,7 +94,8 @@ nmap <leader>ad :ALEDetail<Cr>
 nmap <leader>ag ::ALEGoToDefinition<Cr>
 nmap <leader>an ::ALENext<Cr>
 nmap <leader>aN ::ALEPrevious<Cr>
-nnoremap gp :silent %!prettier --stdin --trailing-comma all --single-quote<CR>
+nnoremap gp :silent %!prettier --stdin --stdin-filepath % --trailing-comma all --single-quote<CR>
+
 
 " Buffer Motions - b
 " --------------------------------------------------------------------------
@@ -104,7 +105,7 @@ nmap <Leader>bd :exe "bn\|:bd#"<Cr>
 
 " Project Motions - p
 " --------------------------------------------------------------------------
-nmap <leader>pf :FZF <Cr>
+nmap <leader>pf :GFiles <Cr>
 
 
 " Splits Motions - w
@@ -147,15 +148,15 @@ nmap <leader>tl :tablast<cr>
 " nmap <leader>tp :tabprevious<cr>
 
 " Airline tab mappings
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
+" nmap <leader>1 <Plug>AirlineSelectTab1
+" nmap <leader>2 <Plug>AirlineSelectTab2
+" nmap <leader>3 <Plug>AirlineSelectTab3
+" nmap <leader>4 <Plug>AirlineSelectTab4
+" nmap <leader>5 <Plug>AirlineSelectTab5
+" nmap <leader>6 <Plug>AirlineSelectTab6
+" nmap <leader>7 <Plug>AirlineSelectTab7
+" nmap <leader>8 <Plug>AirlineSelectTab8
+" nmap <leader>9 <Plug>AirlineSelectTab9
 " nmap <leader>- <Plug>AirlineSelectPrevTab
 " nmap <leader>+ <Plug>AirlineSelectNextTab
 
@@ -176,9 +177,9 @@ nnoremap <leader>cns :set number<cr>
 
 
 " Change color theme
-nmap <leader>ccp :PrevColorScheme<cr>
-nmap <leader>ccn :NextColorScheme<cr>
-nmap <leader>ccr :RandomColorScheme<cr>
+" nmap <leader>ccp :PrevColorScheme<cr>
+" nmap <leader>ccn :NextColorScheme<cr>
+" nmap <leader>ccr :RandomColorScheme<cr>
 
 
 " Auto Commands

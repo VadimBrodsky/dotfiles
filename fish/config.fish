@@ -44,4 +44,5 @@ alias la='ls -A'
 alias lh='ls -lah'
 alias l='ls -CF'
 alias g=git
+alias gg='git grep'
 alias vim=nvim

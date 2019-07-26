@@ -16,6 +16,7 @@
   a = add
   aa = add -A
   b = branch
+  bv = branch -v --sort=committerdate
   co = checkout
   cob = checkout -b
   d = diff

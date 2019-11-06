@@ -34,7 +34,7 @@ function! NumberToggle()
 endfunc
 
 set ruler                       " Show cursor position
-" set cursorline                  " Highlight current line
+set cursorline                  " Highlight current line
 " set colorcolumn=85               " Vertical ruler for preferred line width
 set colorcolumn=0
 " set textwidth=79                 " Hard-wrap long lines as you type them.
@@ -123,4 +123,5 @@ endif
 
 
 " Folding
-set foldmethod=syntax
+set foldmethod=syntax           " fold using syntax
+set nofoldenable                " open files unfolded, zm to restore folds

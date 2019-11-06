@@ -1,0 +1,15 @@
+{
+    "window.zoomLevel": 1,
+    "git.autofetch": true,
+    "workbench.colorTheme": "Solarized Light",
+    "breadcrumbs.enabled": false,
+    "files.insertFinalNewline": true,
+    "editor.minimap.enabled": false,
+    "vim.leader": "space",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "p", "f"],
+            "commands": [ "workbench.action.quickOpen" ]
+        }
+    ]
+}

@@ -17,3 +17,5 @@ fish/functions/fisher.fish
 nvim/autoload/*
 nvim/autoload/plug.vim
 *.swl
+*.swk
+*.spl

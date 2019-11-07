@@ -6,6 +6,7 @@
     "files.insertFinalNewline": true,
     "editor.minimap.enabled": false,
     "vim.leader": "space",
+    "vim.foldfix": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<leader>", "p", "f"],

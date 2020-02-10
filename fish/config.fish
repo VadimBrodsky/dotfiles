@@ -14,6 +14,7 @@ if test -e ~/.asdf/asdf.fish
   source ~/.asdf/asdf.fish
 end
 
-if test -e ~/.config/fish/fish_local.fish
-  . ~/.config/fish/fish_local.fish
+# test for unbntu local file
+if test -e ./local/ubuntu_local.fish
+  . ./local/ubuntu_local.fish
 end

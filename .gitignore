@@ -1,12 +1,16 @@
 /vim/plugged
 /nvim/plugged
 /nvim/_temp
+/nvim/spell
 .netrwhist
 *.swp
 *.swo
 /_backup/!.keep
 /_temp/!.keep
 yarn/global/node_modules
-nvim/spell
 plug.vim
 asdf.fish
+
+# These are added when installing fzf via vim plug
+fish/functions/fish_user_key_bindings.fish
+fish/functions/fzf_key_bindings.fish

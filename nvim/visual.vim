@@ -1,5 +1,7 @@
 "------------------------------ Visuals ---------------------------------
 set t_Co=256
+set termguicolors
+" set background=light
 set background=dark
 
 " colorscheme solarized
@@ -13,6 +15,3 @@ colorscheme PaperColor
 " Background from terminal
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-
-" Use JavaScript mode for es6 files
-autocmd BufNewFile,BufRead *.es6   set syntax=javascript

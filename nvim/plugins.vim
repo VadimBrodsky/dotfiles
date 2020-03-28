@@ -22,6 +22,10 @@ call plug#begin('~/.config/nvim/plugged')
   " Dark powered asynchronous completion framework for neovim
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+  " fuzzy finder for vim
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+  Plug 'junegunn/fzf.vim'
+
   " Additional Languages
   " Plug 'ElmCast/elm-vim'           " Elm
 

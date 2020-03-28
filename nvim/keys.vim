@@ -36,7 +36,7 @@ nmap <leader>ns :set nospell<cr>
 " --------------------------------------------------------------------------
 nmap <C-s> :w<cr>
 nmap <leader>fs :w<cr>
-nmap <leader>ff :cd %:p:h<cr> :e . <cr>
+nmap <leader>ff :Explore <cr>
 
 
 " Vimrc Motions - v
@@ -63,7 +63,7 @@ nmap <leader>bb :CtrlPBuffer <Cr>
 
 " Project Motions - p
 " --------------------------------------------------------------------------
-nmap <leader>pf :CtrlP <Cr>
+nmap <leader>pf :GFiles <Cr>
 
 
 " Splits Motions - w

@@ -4,6 +4,7 @@
 set visualbell                             " No beeping
 set backupdir^=~/.config/nvim/_backup//    " where to put backup files.
 set directory^=~/.config/nvim/_temp//      " where to put swap files.
+set undodir^=~/.config/nvim/_undodir//     " where to put undo files."
 
 
 " Syntax
@@ -40,7 +41,7 @@ set colorcolumn=0               " Vertical ruler for preferred line width
 set laststatus=2                " Show the status line all the time
 set showcmd                     " Display incomplete commands
 set showmode                    " Display the mode you're in
-" set modeline                    " Show the mode line
+set modeline                    " Show the mode line
 
 " Useful status information at bottom of screen
 " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
@@ -107,6 +108,20 @@ set hidden                      " Allow buffer change w/o saving
 set splitbelow                  " Split down and focus
 set splitright                  " Split right and focus
 
+" Undo History
+set undofile                    " Use the undo file to store undo history
+
+
+" Vim Grep
+if executable("rg")
+  set grepprg=rg\ --vimgrep
+  set grepformat^=%f:%l:%c:%m
+endif
+
+
+" Folding
+set foldmethod=syntax           " fold using syntax
+set nofoldenable                " open files unfolded, zm to restore folds
 
 " Language Specific
 " GoLang

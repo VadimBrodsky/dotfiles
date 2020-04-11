@@ -19,17 +19,27 @@ imap kj <esc>
 " Quit Vim like Spacemacs
 nmap <leader>qq :q<cr>
 nmap <leader>wc :q<cr>
+nmap <leader>qa :qa<cr>
 
 " Remove search or highlight
 nmap <leader>nh :nohlsearch<cr>
 nmap <leader>ns :set nospell<cr>
 
+" Bracket matching, same as %
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Fold tag
+nnoremap <leader>tf Vatzf
+
+" Reselect pasted code
+nnoremap <leader>v V`]`"
+
 " Copy the entire buffer into the system register
-" nmap <leader>co ggVG*y
+nmap <leader>co ggVG*y
 
 " Paste from clipboard without indentation
-" nmap <leader>vr :sp $MYVIMRC<cr>
-" nmap <leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
+nmap <leader>p :set paste<cr>o<esc>"*]p:set nopaste<cr>
 
 
 " File Motions - f
@@ -37,6 +47,8 @@ nmap <leader>ns :set nospell<cr>
 nmap <C-s> :w<cr>
 nmap <leader>fs :w<cr>
 nmap <leader>ff :Explore <cr>
+nmap <leader>fv :Vexplore <cr>
+nmap <leader>fh :Hexplore <cr>
 
 
 " Vimrc Motions - v
@@ -52,6 +64,8 @@ nmap <leader>af :ALEFix<Cr>
 nmap <leader>ah :ALEHover<Cr>
 nmap <leader>ad :ALEDetail<Cr>
 nmap <leader>ag :ALEGoToDefinition<Cr>
+nmap <leader>an ::ALENext<Cr>
+nmap <leader>aN ::ALEPrevious<Cr>
 nmap <leader>gp :silent %!prettier --stdin --trailing-comma all --single-quote<CR>
 
 
@@ -59,6 +73,7 @@ nmap <leader>gp :silent %!prettier --stdin --trailing-comma all --single-quote<C
 " --------------------------------------------------------------------------
 nmap <leader><tab> :b#<cr>
 nmap <leader>bb :CtrlPBuffer <Cr>
+nmap <Leader>bd :exe "bn\|:bd#"<Cr>
 
 
 " Project Motions - p
@@ -83,6 +98,11 @@ nnoremap <leader>= :wincmd =<cr>
 " nmap <leader>w- :vnew <C-r>=escape(expand("
 
 
+" Terminal
+" --------------------------------------------------------------------------
+:tnoremap <Esc> <C-\><C-n>      "Exit terminal mode
+
+
 " Tab mappings - t
 " --------------------------------------------------------------------------
 nmap <leader>tn :tabnew<cr>
@@ -95,24 +115,19 @@ nmap <leader>tl :tablast<cr>
 " nmap <leader>tn :tabnext<cr>
 " nmap <leader>tp :tabprevious<cr>
 
-" Airline tab mappings
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-" nmap <leader>- <Plug>AirlineSelectPrevTab
-" nmap <leader>+ <Plug>AirlineSelectNextTab
-
 
 " Toggles
 " --------------------------------------------------------------------------
 " Toggle between normal and relative numbering.
 nnoremap <leader>cn :call NumberToggle()<cr>
+
+" Hide numbers
+" Change Number Hide
+nnoremap <leader>cnh :set nornu nonu <cr>
+
+" Show numbers
+" Change Number Show
+nnoremap <leader>cns :set number<cr>
 
 
 " Auto Commands
@@ -122,6 +137,8 @@ nnoremap <leader>cn :call NumberToggle()<cr>
 autocmd Filetype help nnoremap <buffer> q :q<cr>
 " automatically rebalance windows on Vim resize
 autocmd VimResized * :wincmd=
+" save file on focus lost
+" autocmd FocusLost * :wa
 
 
 " Command Aliases
@@ -130,6 +147,10 @@ command! Q q
 command! Qall qall
 command! QA qall
 command! E e
+command! PrettyJson %!python -m json.tool
+command! Shuffle %!perl -MList::Util=shuffle -e 'print shuffle(<STDIN>);'
+command! StripWhitespace %s/\s\+$//<cr>:let @/=''<CR>
+" command! GenerateTags !ctags .
 
 " command ElmFormat :silent %!elm-format --stdin
 nnoremap ef :ElmFormat<cr>

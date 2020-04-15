@@ -92,6 +92,7 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'json': ['prettier'],
 \   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
 \   'markdown': ['prettier'],
 \   'html': ['prettier'],
 \   'yaml': ['prettier'],

@@ -72,13 +72,13 @@ nmap <leader>gp :silent %!prettier --stdin --trailing-comma all --single-quote<C
 " Buffer Motions - b
 " --------------------------------------------------------------------------
 nmap <leader><tab> :b#<cr>
-nmap <leader>bb :CtrlPBuffer <Cr>
+nmap <leader>bb :Buffers<Cr>
 nmap <Leader>bd :exe "bn\|:bd#"<Cr>
 
 
 " Project Motions - p
 " --------------------------------------------------------------------------
-nmap <leader>pf :GFiles <Cr>
+nmap <leader>pf :GFiles<Cr>
 
 
 " Splits Motions - w

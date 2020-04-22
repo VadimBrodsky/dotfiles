@@ -1,8 +1,8 @@
 "------------------------------ Visuals ---------------------------------
 set t_Co=256
 " set termguicolors
-" set background=light
-set background=dark
+set background=light
+" set background=dark
 
 " let g:space_vim_dark_background = 238
 

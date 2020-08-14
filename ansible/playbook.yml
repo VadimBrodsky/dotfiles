@@ -1,6 +1,8 @@
 ---
 - hosts: all
   vars:
+    dotfiles_home: ~/code/dotfiles
+
     homebrew_packages:
      - coreutils
      - curl
@@ -24,9 +26,11 @@
      - asdf
 
     homebrew_casks:
+      - 1password
       - docker
       - figma
       - firefox
+      - insomnia
       - github
       - google-chrome
       - sequel-pro
@@ -38,6 +42,11 @@
       - visual-studio-code
       - vlc
       - zoomus
+
+    mas_applications:
+      - reeder
+      - xcode
+      - amphetamine
 
     asdf_plugins:
       - nodejs
@@ -84,11 +93,9 @@
 
 #     - name: Add asdf to zsh shell
 #       command: 'echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
-# '
 
 #     - name: Add asdf to fish shell
 #       command: 'echo -e "\nsource $(brew --prefix asdf)/asdf.fish" >> ~/.config/fish/config.fish
-# '
 
     - name: Install asdf plugins
       command: "asdf plugin add {{ item }}"
@@ -153,4 +160,82 @@
       tags:
         - asdf
         - golang
+
+    - name: Symlink Spectacle Shortcuts
+      file:
+        src: "{{ dotfiles_home }}/spectacle_shortcuts.json"
+        dest: "~/Library/Application\ Support/Spectacle/Shortcuts.json"
+        state: link
+        force: yes
+      tags:
+        - links
+
+    - name: Create config directories
+      file:
+        path: "~/.config/{{ item }}"
+        state: directory
+      loop:
+        - alacritty
+      tags:
+        - links
+
+    - name: Symlink Tmux
+      file:
+        src: "{{ dotfiles_home }}/tmux/tmux.conf"
+        dest: "~/.tmux.conf"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink NeoVim
+      file:
+        src: "{{ dotfiles_home }}/nvim"
+        dest: "~/.config/nvim"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink Fish
+      file:
+        src: "{{ dotfiles_home }}/fish"
+        dest: "~/.config/fish"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink Git
+      file:
+        src: "{{ dotfiles_home }}/git/{{ item }}"
+        dest: "~/.{{ item }}"
+        state: link
+      loop:
+        - gitconfig
+        - gitignore
+      tags:
+        - links
+
+    - name: Install vim-plug
+      get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: "~/.config/nvim/autoload/plug.vim"
+      tags:
+        - vim
+
+    - name: Install plugins
+      command: nvim +PlugInstall +qall
+      tags:
+        - vim
+
+    # sudo xcodebuild -license
+
+    - name: Install Pip packages
+      pip:
+        name:
+          - pynvim
+        executable: pip3
+      tags:
+        - vim
+      
+
+
 

@@ -67,6 +67,15 @@
     golang_versions:
       - 1.14.4
 
+    gems:
+      - bundler
+      - neovim
+      - docopt
+      - aws-sdk
+      - highline
+      - rest-client
+      - activesupport
+
   tasks:  
     - name: Update homebrew
       homebrew:
@@ -238,7 +247,15 @@
           - pynvim
         executable: pip3
       tags:
-        - vim
+        - packages
+
+    - name: Install Gems
+      gem:
+        name: "{{ item }}"
+        state: present
+      loop: '{{ gems }}'
+      tags:
+        - packages
 
     # todo
     # sudo xcodebuild -license

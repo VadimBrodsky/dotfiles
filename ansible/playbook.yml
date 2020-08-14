@@ -1,0 +1,60 @@
+---
+- hosts: all
+  vars:
+    homebrew_packages:
+     - coreutils
+     - curl
+     - ffmpeg
+     - fish
+     - fzf
+     - git
+     - gpg
+     - htop
+     - jq
+     - kubectl
+     - neovim
+     - python3
+     - skaffold
+     - terraform
+     - tmux
+     - tree
+     - watchman
+     - wget
+     - youtube-dl
+     - asdf
+
+    homebrew_casks:
+      - docker
+      - figma
+      - firefox
+      - github
+      - google-chrome
+      - sequel-pro
+      - slack
+      - spectacle
+      - spotify
+      - the-unarchiver
+      - virtualbox
+      - visual-studio-code
+      - vlc
+      - zoomus
+
+  tasks:  
+    - name: Update homebrew
+      homebrew:
+        name: git
+        state: latest
+        update_homebrew: true
+
+    - name: Install libraries with homebrew
+      homebrew:
+        name={{ item }}
+        state=latest
+      loop: '{{ homebrew_packages }}'
+
+    - name: Install homebrew cask packages
+      homebrew_cask:
+        name: '{{ item }}'
+        state: installed
+      loop: '{{ homebrew_casks }}'
+

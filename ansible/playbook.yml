@@ -226,8 +226,6 @@
       tags:
         - vim
 
-    # sudo xcodebuild -license
-
     - name: Install Pip packages
       pip:
         name:
@@ -235,6 +233,11 @@
         executable: pip3
       tags:
         - vim
+
+    # todo
+    # sudo xcodebuild -license
+    # sudo echo $(which fish) >> /etc/shells
+    # chsh -s /usr/local/bin/fish
       
 
 

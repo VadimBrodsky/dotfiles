@@ -69,7 +69,7 @@ let g:ale_fixers = {
 \}
 
 let g:ale_fix_on_save = 0
-let g:ale_javascript_prettier_options = '--arrow-parens always --print-width 80 --tab-width 2  --single-quote true --trailing-comma all'
+let g:ale_javascript_prettier_options = '--arrow-parens always --print-width 100 --tab-width 2  --single-quote true --trailing-comma all'
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1

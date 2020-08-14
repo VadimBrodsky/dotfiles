@@ -14,3 +14,4 @@ asdf.fish
 # These are added when installing fzf via vim plug
 fish/functions/fish_user_key_bindings.fish
 fish/functions/fzf_key_bindings.fish
+fish/fish_variables

@@ -11,6 +11,7 @@
   cob = checkout -b
   d = diff
   s = status
+  release-log = log --pretty=format:'%s' --graph
 [core]
 	editor = vim
 [filter "lfs"]

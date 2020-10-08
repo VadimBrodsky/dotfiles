@@ -6,6 +6,7 @@
     homebrew_packages:
      - coreutils
      - curl
+     - exercism
      - ffmpeg
      - fish
      - fzf
@@ -34,6 +35,7 @@
       - github
       - google-chrome
       - insomnia
+      - lunar
       - sequel-pro
       - slack
       - spectacle
@@ -45,9 +47,9 @@
       - zoomus
 
     mas_applications:
+      - amphetamine
       - reeder
       - xcode
-      - amphetamine
 
     asdf_plugins:
       - nodejs

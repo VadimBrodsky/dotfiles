@@ -34,6 +34,7 @@
      - containerd.io
      - libssl-dev
      - psensor
+     - alacritty
 
     snap_packages:
      - spotify
@@ -88,6 +89,14 @@
       become: yes
       apt_repository:
         repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ release }} stable"
+        update_cache: yes
+      tags: 
+        - packages
+
+    - name: Add an Apt repository for Alacritty
+      become: yes
+      apt_repository:
+        repo: "ppa:aslatter/ppa"
         update_cache: yes
       tags: 
         - packages

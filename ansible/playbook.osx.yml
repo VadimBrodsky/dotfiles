@@ -180,7 +180,7 @@
 
     - name: Symlink Spectacle Shortcuts
       file:
-        src: "{{ dotfiles_home }}/spectacle_shortcuts.json"
+        src: "{{ dotfiles_home }}/spectacle/Shortcuts.json"
         dest: "~/Library/Application\ Support/Spectacle/Shortcuts.json"
         state: link
         force: yes

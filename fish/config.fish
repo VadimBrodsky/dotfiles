@@ -19,4 +19,4 @@ if test -e ~/.config/local/local.fish
   . ~/.config/local/local.fish
 end
 
-source /usr/local/opt/asdf/asdf.fish
+source ~/.asdf/asdf.fish

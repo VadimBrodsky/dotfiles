@@ -1,0 +1,269 @@
+---
+- hosts: all
+  vars:
+    dotfiles_home: ~/code/dotfiles
+
+    homebrew_packages:
+     - coreutils
+     - curl
+     - exercism
+     - ffmpeg
+     - fish
+     - fzf
+     - git
+     - gpg
+     - htop
+     - jq
+     - kubectl
+     - neovim
+     - python3
+     - skaffold
+     - tfenv
+     - tmux
+     - tree
+     - watchman
+     - wget
+     - youtube-dl
+     - asdf
+
+    homebrew_casks:
+      - 1password
+      - docker
+      - figma
+      - firefox
+      - font-cascadia
+      - github
+      - google-chrome
+      - insomnia
+      - lunar
+      - sequel-pro
+      - slack
+      - spectacle
+      - spotify
+      - the-unarchiver
+      - virtualbox
+      - visual-studio-code
+      - vlc
+      - zoomus
+
+    mas_applications:
+      - amphetamine
+      - reeder
+      - xcode
+
+    asdf_plugins:
+      - nodejs
+      - yarn
+      - ruby
+      - golang
+
+    nodejs_versions:
+      - 12.13.0
+
+    yarn_versions:
+      - 1.19.1
+
+    ruby_versions:
+      - 2.6.5
+
+    golang_versions:
+      - 1.14.4
+
+    gems:
+      - bundler
+      - neovim
+      - docopt
+      - aws-sdk
+      - highline
+      - rest-client
+      - activesupport
+
+  tasks:  
+    - name: Update homebrew
+      homebrew:
+        name: git
+        state: latest
+        update_homebrew: true
+      tags: 
+        - packages
+
+    - name: Add homebrew tap
+      homebrew_tap:
+        name: homebrew/cask-fonts
+        state: present
+
+    - name: Install libraries with homebrew
+      homebrew:
+        name={{ item }}
+        state=latest
+      loop: '{{ homebrew_packages }}'
+      tags: 
+        - packages
+
+    - name: Install homebrew cask packages
+      homebrew_cask:
+        name: '{{ item }}'
+        state: installed
+      loop: '{{ homebrew_casks }}'
+      tags: 
+        - packages
+
+#     - name: Add asdf to zsh shell
+#       command: 'echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+
+#     - name: Add asdf to fish shell
+#       command: 'echo -e "\nsource $(brew --prefix asdf)/asdf.fish" >> ~/.config/fish/config.fish
+
+    - name: Install asdf plugins
+      command: "asdf plugin add {{ item }}"
+      loop: '{{ asdf_plugins }}'
+      register: plugin_add
+      failed_when: plugin_add == 2
+      tags:
+        - asdf
+
+    - name: Get Node.js PGP key
+      command: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Install Node.js {{ nodejs_versions }} with asdf
+      command: "asdf install nodejs {{ item }}"
+      loop: '{{ nodejs_versions }}'
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Set global Node.js {{ nodejs_versions[0]}} with asdf
+      command: asdf global nodejs {{ nodejs_versions[0] }}
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Install Yarn {{ yarn_versions }} with asdf
+      command: "asdf install yarn {{ item }}"
+      loop: '{{ yarn_versions }}'
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Set global Yarn {{ yarn_versions[0]}} with asdf
+      command: asdf global yarn {{ yarn_versions[0] }}
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Install Ruby {{ ruby_versions }} with asdf
+      command: "asdf install ruby {{ item }}"
+      loop: '{{ ruby_versions }}'
+      tags:
+        - asdf
+
+    - name: Set global Ruby {{ ruby_versions[0]}} with asdf
+      command: asdf global ruby {{ ruby_versions[0] }}
+      tags:
+        - asdf
+        - ruby
+
+    - name: Install GoLang {{ golang_versions }} with asdf
+      command: "asdf install golang {{ item }}"
+      loop: '{{ golang_versions }}'
+      tags:
+        - asdf
+
+    - name: Set global Golang {{ golang_versions[0]}} with asdf
+      command: asdf global golang {{ golang_versions[0] }}
+      tags:
+        - asdf
+        - golang
+
+    - name: Symlink Spectacle Shortcuts
+      file:
+        src: "{{ dotfiles_home }}/spectacle_shortcuts.json"
+        dest: "~/Library/Application\ Support/Spectacle/Shortcuts.json"
+        state: link
+        force: yes
+      tags:
+        - links
+
+    - name: Create config directories
+      file:
+        path: "~/.config/{{ item }}"
+        state: directory
+      loop:
+        - alacritty
+      tags:
+        - links
+
+    - name: Symlink Tmux
+      file:
+        src: "{{ dotfiles_home }}/tmux/tmux.conf"
+        dest: "~/.tmux.conf"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink NeoVim
+      file:
+        src: "{{ dotfiles_home }}/nvim"
+        dest: "~/.config/nvim"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink Fish
+      file:
+        src: "{{ dotfiles_home }}/fish"
+        dest: "~/.config/fish"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink Git
+      file:
+        src: "{{ dotfiles_home }}/git/{{ item }}"
+        dest: "~/.{{ item }}"
+        state: link
+      loop:
+        - gitconfig
+        - gitignore
+      tags:
+        - links
+
+    - name: Install vim-plug
+      get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: "~/.config/nvim/autoload/plug.vim"
+      tags:
+        - vim
+
+    - name: Install plugins
+      command: nvim +PlugInstall +qall
+      tags:
+        - vim
+
+    - name: Install Pip packages
+      pip:
+        name:
+          - pynvim
+        executable: pip3
+      tags:
+        - packages
+
+    - name: Install Gems
+      gem:
+        name: "{{ item }}"
+        state: present
+      loop: '{{ gems }}'
+      tags:
+        - packages
+
+    # todo
+    # sudo xcodebuild -license
+    # sudo echo $(which fish) >> /etc/shells
+    # chsh -s /usr/local/bin/fish
+      
+
+
+

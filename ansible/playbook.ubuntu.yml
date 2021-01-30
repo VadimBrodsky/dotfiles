@@ -1,0 +1,286 @@
+---
+- hosts: all
+  vars:
+    dotfiles_home: ~/code/dotfiles
+
+    # lsb_release -cs
+    release: groovy
+
+    apt_packages:
+     - git
+     - curl
+     - python3
+     - python3-pip
+     - ffmpeg
+     - fish
+     - fzf
+     - gpg
+     - htop
+     - jq
+     - neovim
+     - tmux
+     - tree
+     - watchman
+     - wget
+     - youtube-dl
+     - vlc
+     - apt-transport-https
+     - ca-certificates
+     - gnupg-agent
+     - software-properties-common
+     - gparted
+     - docker-ce
+     - docker-ce-cli
+     - containerd.io
+     - libssl-dev
+     - psensor
+     - alacritty
+
+    snap_packages:
+     - spotify
+     - insomnia
+
+    snap_classic_packages:
+     - slack
+     - code
+
+    snap_experimental_packages:
+     - 1password
+
+    asdf_plugins:
+      - nodejs
+      - ruby
+      - golang
+      - deno
+
+    nodejs_version: 14.15.4
+    yarn_version: 2.4.0
+    ruby_version: 3.0.0
+    golang_version: 1.15.7
+    deno_version: 1.7.1
+
+    python_packages:
+     - pynvim
+     - docker-compose
+
+    gems:
+      - bundler
+      - neovim
+      - rails
+      - rubocop
+
+    node_modules:
+      - yarn
+      - neovim
+      - expo-cli
+
+  tasks:  
+    - name: Add an Apt signing key for Docker
+      become: yes
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add an Apt repository for Docker
+      become: yes
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ release }} stable"
+        update_cache: yes
+      tags: 
+        - packages
+
+    - name: Add an Apt repository for Alacritty
+      become: yes
+      apt_repository:
+        repo: "ppa:aslatter/ppa"
+        update_cache: yes
+      tags: 
+        - packages
+
+    - name: Install apt packages
+      become: yes
+      apt:
+        name: "{{ item }}"
+        state: latest
+        update_cache: yes
+      loop: '{{ apt_packages }}'
+      tags: 
+        - packages
+
+    - name: Install Snap Packages
+      become: yes
+      community.general.snap:
+        name: "{{ item }}"
+        state: present
+      loop: '{{ snap_packages }}'
+
+    - name: Install Classic Snap Packages
+      become: yes
+      community.general.snap:
+        name: "{{ item }}"
+        classic: true
+        state: present
+      loop: '{{ snap_classic_packages }}'
+
+    - name: Install Experimetal Snap Packages
+      become: yes
+      community.general.snap:
+        name: "{{ item }}"
+        channel: latest/edge
+        state: present
+      loop: '{{ snap_experimental_packages }}'
+
+    - name: Install asdf
+      git:
+        repo: 'https://github.com/asdf-vm/asdf.git'
+        dest: ~/.asdf
+        version: v0.8.0
+
+    - name: Add asdf bash integration
+      lineinfile:
+        path: ~/.bashrc
+        line: ". $HOME/.asdf/asdf.sh"
+        state: present
+
+    - name: Add asdf bash completion
+      lineinfile:
+        path: ~/.bashrc
+        line: ". $HOME/.asdf/completions/asdf.bash"
+        state: present
+
+    - name: Install asdf plugins
+      command: "asdf plugin add {{ item }}"
+      loop: '{{ asdf_plugins }}'
+      register: plugin_add
+      failed_when: plugin_add == 2
+      tags:
+        - asdf
+
+    - name: Get Node.js PGP key
+      command: bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Install Node.js {{ nodejs_version }} with asdf
+      command: "asdf install nodejs {{ nodejs_version }}"
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Set global Node.js {{ nodejs_version}} with asdf
+      command: asdf global nodejs {{ nodejs_version }}
+      tags:
+        - asdf
+        - nodejs
+
+    - name: Install Ruby {{ ruby_version }} with asdf
+      command: "asdf install ruby {{ ruby_version }}"
+      tags:
+        - asdf
+
+    - name: Set global Ruby {{ ruby_version}} with asdf
+      command: asdf global ruby {{ ruby_version }}
+      tags:
+        - asdf
+        - ruby
+
+    - name: Install GoLang {{ golang_version }} with asdf
+      command: "asdf install golang {{ golang_version }}"
+      tags:
+        - asdf
+
+    - name: Set global Golang {{ golang_version}} with asdf
+      command: asdf global golang {{ golang_version }}
+      tags:
+        - asdf
+        - golang
+
+    - name: Install Deno {{ deno_version }} with asdf
+      command: "asdf install deno {{ deno_version }}"
+      tags:
+        - asdf
+
+    - name: Set global Deno {{ deno_version}} with asdf
+      command: asdf global golang {{ deno_version }}
+      tags:
+        - asdf
+        - deno
+
+    - name: Install Pip packages
+      pip:
+        name: "{{ item }}"
+        executable: pip3
+      loop: '{{ python_packages }}'
+      tags:
+        - packages
+
+    - name: Install Gems
+      gem:
+        name: "{{ item }}"
+        state: present
+      loop: '{{ gems }}'
+      tags:
+        - packages
+
+    - name: Install Node global modules
+      community.general.npm:
+        name: "{{ item }}"
+        global: yes
+      loop: '{{ node_modules }}'
+      tags:
+        - packages
+
+    - name: Symlink Tmux
+      file:
+        src: "{{ dotfiles_home }}/tmux/tmux.conf"
+        dest: "~/.tmux.conf"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink NeoVim
+      file:
+        src: "{{ dotfiles_home }}/nvim"
+        dest: "~/.config/nvim"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink Fish
+      file:
+        src: "{{ dotfiles_home }}/fish"
+        dest: "~/.config/fish"
+        state: link
+      tags:
+        - links
+
+    - name: Symlink Git
+      file:
+        src: "{{ dotfiles_home }}/git/{{ item }}"
+        dest: "~/.{{ item }}"
+        state: link
+      loop:
+        - gitconfig
+        - gitignore
+      tags:
+        - links
+
+    - name: Install vim-plug
+      get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: "~/.config/nvim/autoload/plug.vim"
+      tags:
+        - vim
+
+    - name: Install plugins
+      command: nvim +PlugInstall +qall
+      tags:
+        - vim
+
+
+    # todo
+    # restart the shell after installing asdf
+    # chsh -s /usr/local/bin/fish
+    # mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions#
+

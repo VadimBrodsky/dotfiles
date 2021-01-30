@@ -5,11 +5,20 @@
 	email = vadim.brodsky@gmail.com
 [alias]
   a = add
-  aa = add -A
   b = branch
   co = checkout
-  cob = checkout -b
   d = diff
   s = status
+  release-log = log --pretty=format:'%s' --graph
+  g = grep
+  branch-sorted = branch -v --sort=committerdate
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  publish = "!git push -u origin $(git branch-name)"
+  unpublish = "!git push origin :$(git branch-name)"
 [core]
 	editor = vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

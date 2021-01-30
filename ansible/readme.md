@@ -1,18 +1,24 @@
 install ansible 
 
-```shell
-sudo pip3 install ansible 
-```
- 
-install homebrew 
+## OSX
 
 ```shell
+# install ansible
+sudo pip3 install ansible
+
+# install homebrew 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
+
+# run the playbook
+ansible-playbook playbook.osx.yml -i local.inventory
 ```
 
-run the playbook
+## Ubuntu
 
 ```shell
-ansible-playbook playbook.yml -i local.inventory
+# install ansible
+sudo apt install ansible
+
+# run the playbook
+ansible-playbook playbook.ubuntu.yml -i local.inventory --ask-become-pass
 ```
-~                    

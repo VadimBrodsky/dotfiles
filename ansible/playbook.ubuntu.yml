@@ -51,18 +51,13 @@
       - nodejs
       - ruby
       - golang
+      - deno
 
-    nodejs_versions:
-      - 14.15.4
-
-    yarn_versions:
-      - 2.4.0
-
-    ruby_versions:
-      - 3.0.0
-
-    golang_versions:
-      - 1.15.7
+    nodejs_version: 14.15.4
+    yarn_version: 2.4.0
+    ruby_version: 3.0.0
+    golang_version: 1.15.7
+    deno_version: 1.7.1
 
     python_packages:
      - pynvim
@@ -77,6 +72,7 @@
     node_modules:
       - yarn
       - neovim
+      - expo-cli
 
   tasks:  
     - name: Add an Apt signing key for Docker
@@ -166,42 +162,50 @@
         - asdf
         - nodejs
 
-    - name: Install Node.js {{ nodejs_versions }} with asdf
-      command: "asdf install nodejs {{ item }}"
-      loop: '{{ nodejs_versions }}'
+    - name: Install Node.js {{ nodejs_version }} with asdf
+      command: "asdf install nodejs {{ nodejs_version }}"
       tags:
         - asdf
         - nodejs
 
-    - name: Set global Node.js {{ nodejs_versions[0]}} with asdf
-      command: asdf global nodejs {{ nodejs_versions[0] }}
+    - name: Set global Node.js {{ nodejs_version}} with asdf
+      command: asdf global nodejs {{ nodejs_version }}
       tags:
         - asdf
         - nodejs
 
-    - name: Install Ruby {{ ruby_versions }} with asdf
-      command: "asdf install ruby {{ item }}"
-      loop: '{{ ruby_versions }}'
+    - name: Install Ruby {{ ruby_version }} with asdf
+      command: "asdf install ruby {{ ruby_version }}"
       tags:
         - asdf
 
-    - name: Set global Ruby {{ ruby_versions[0]}} with asdf
-      command: asdf global ruby {{ ruby_versions[0] }}
+    - name: Set global Ruby {{ ruby_version}} with asdf
+      command: asdf global ruby {{ ruby_version }}
       tags:
         - asdf
         - ruby
 
-    - name: Install GoLang {{ golang_versions }} with asdf
-      command: "asdf install golang {{ item }}"
-      loop: '{{ golang_versions }}'
+    - name: Install GoLang {{ golang_version }} with asdf
+      command: "asdf install golang {{ golang_version }}"
       tags:
         - asdf
 
-    - name: Set global Golang {{ golang_versions[0]}} with asdf
-      command: asdf global golang {{ golang_versions[0] }}
+    - name: Set global Golang {{ golang_version}} with asdf
+      command: asdf global golang {{ golang_version }}
       tags:
         - asdf
         - golang
+
+    - name: Install Deno {{ deno_version }} with asdf
+      command: "asdf install deno {{ deno_version }}"
+      tags:
+        - asdf
+
+    - name: Set global Deno {{ deno_version}} with asdf
+      command: asdf global golang {{ deno_version }}
+      tags:
+        - asdf
+        - deno
 
     - name: Install Pip packages
       pip:

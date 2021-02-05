@@ -51,6 +51,7 @@
     snap_packages:
      - spotify
      - insomnia
+     - brave
 
     snap_classic_packages:
      - slack

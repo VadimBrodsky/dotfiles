@@ -33,6 +33,7 @@
      - docker-ce-cli
      - containerd.io
      - libssl-dev
+     - sqlite3
      - psensor
      - alacritty
        # android studio
@@ -308,8 +309,14 @@
         - vim
 
 
-    # todo
-    # restart the shell after installing asdf
-    # chsh -s /usr/local/bin/fish
-    # mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions#
+# todo
+# restart the shell after installing asdf
+# chsh -s /usr/local/bin/fish
+# mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 
+# chrome driver
+# wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+# unzip chromedriver_linux64.zip
+# sudo mv chromedriver /usr/bin/chromedriver
+# sudo chown root:root /usr/bin/chromedriver
+# sudo chmod +x /usr/bin/chromedriver

@@ -35,6 +35,18 @@
      - libssl-dev
      - psensor
      - alacritty
+       # android studio
+     - libc6:i386
+     - libncurses5:i386
+     - libstdc++6:i386
+     - lib32z1
+     - libbz2-1.0:i386
+     - android-sdk-platform-tools-common
+     # kvm
+     - qemu-kvm
+     - libvirt-daemon-system
+     - libvirt-clients
+     - bridge-utils
 
     snap_packages:
      - spotify
@@ -43,6 +55,7 @@
     snap_classic_packages:
      - slack
      - code
+     - android-studio
 
     snap_experimental_packages:
      - 1password
@@ -52,12 +65,14 @@
       - ruby
       - golang
       - deno
+      - java
 
     nodejs_version: 14.15.4
     yarn_version: 2.4.0
     ruby_version: 3.0.0
     golang_version: 1.15.7
     deno_version: 1.7.1
+    java_version: openjdk-15
 
     python_packages:
      - pynvim
@@ -200,12 +215,25 @@
       command: "asdf install deno {{ deno_version }}"
       tags:
         - asdf
+        - deno
 
     - name: Set global Deno {{ deno_version}} with asdf
-      command: asdf global golang {{ deno_version }}
+      command: asdf global deno {{ deno_version }}
       tags:
         - asdf
         - deno
+
+    - name: Install Java {{ java_version }} with asdf
+      command: "asdf install java {{ java_version }}"
+      tags:
+        - asdf
+        - java
+
+    - name: Set global Java {{ java_version}} with asdf
+      command: asdf global java {{ java_version }}
+      tags:
+        - asdf
+        - java
 
     - name: Install Pip packages
       pip:

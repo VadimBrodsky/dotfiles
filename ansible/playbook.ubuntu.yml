@@ -34,6 +34,7 @@
      - containerd.io
      - libssl-dev
      - libsqlite3-dev
+     - sqlite
      - psensor
      - alacritty
        # android studio

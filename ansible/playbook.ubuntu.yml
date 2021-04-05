@@ -35,6 +35,7 @@
      - libssl-dev
      - libsqlite3-dev
      - sqlite
+     - imagemagick
      - psensor
      - alacritty
        # android studio

@@ -1,70 +1,12 @@
 ---
 - hosts: all
-  vars:
-    dotfiles_home: ~/code/dotfiles
+  vars_files:
+    - vars/global.yml
+    - vars/ubuntu.yml
+    - vars/apt-packages.yml
+    - vars/runtimes.yml
 
-    # lsb_release -cs
-    release: jammy
-
-    apt_packages:
-     - git
-     - curl
-     - python3
-     - python3-pip
-     - ffmpeg
-     - fzf
-     - gpg
-     - htop
-     - jq
-     - neovim
-     - tmux
-     - tree
-     - watchman
-     - wget
-     - youtube-dl
-     - apt-transport-https
-     - ca-certificates
-     - gnupg-agent
-     - software-properties-common
-     - docker-ce
-     - docker-ce-cli
-     - containerd.io
-     - libssl-dev
-     - libsqlite3-dev
-     - sqlite
-     - imagemagick
-
-    asdf_plugins:
-      - nodejs
-      - ruby
-      - golang
-      - deno
-      - java
-
-    asdf_version: 0.10.2
-    nodejs_version: 18.12.1
-    yarn_version: 3.2.4
-    ruby_version: 3.1.2
-    golang_version: 1.19.3
-    deno_version: 1.27.2
-    java_version: openjdk-18
-
-    python_packages:
-     - pynvim
-     - docker-compose
-
-    gems:
-      - bundler
-      - neovim
-      - rails
-      - rubocop
-
-    node_modules:
-      - yarn
-      - neovim
-      - expo-cli
-
-  tasks:  
+  tasks:
     - name: Add an Apt signing key for Docker
       become: yes
       apt_key:

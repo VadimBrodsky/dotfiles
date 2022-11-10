@@ -1,0 +1,28 @@
+---
+apt_packages:
+  - git
+  - curl
+  - python3
+  - python3-pip
+  - ffmpeg
+  - fzf
+  - gpg
+  - htop
+  - jq
+  - neovim
+  - tmux
+  - tree
+  - watchman
+  - wget
+  - youtube-dl
+  - apt-transport-https
+  - ca-certificates
+  - gnupg-agent
+  - software-properties-common
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - libssl-dev
+  - libsqlite3-dev
+  - sqlite
+  - imagemagick

@@ -1,0 +1,28 @@
+---
+- name: Add an Apt signing key for Docker
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  tags:
+    - packages
+
+- name: Add an Apt repository for Docker
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ release }} stable"
+    update_cache: yes
+  tags:
+    - packages
+
+- name: Install Docker packages
+  become: yes
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: latest
+    update_cache: yes
+  tags:
+    - packages

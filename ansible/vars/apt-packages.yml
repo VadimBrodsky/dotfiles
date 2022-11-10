@@ -19,9 +19,6 @@ apt_packages:
   - ca-certificates
   - gnupg-agent
   - software-properties-common
-  - docker-ce
-  - docker-ce-cli
-  - containerd.io
   - libssl-dev
   - libsqlite3-dev
   - sqlite

@@ -1,0 +1,24 @@
+---
+- name: Install Pip packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  loop: '{{ python_packages }}'
+  tags:
+    - packages
+
+- name: Install Gems
+  gem:
+    name: "{{ item }}"
+    state: present
+  loop: '{{ gems }}'
+  tags:
+    - packages
+
+- name: Install Node global modules
+  community.general.npm:
+    name: "{{ item }}"
+    global: yes
+  loop: '{{ node_modules }}'
+  tags:
+    - packages

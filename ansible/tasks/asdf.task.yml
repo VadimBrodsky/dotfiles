@@ -1,0 +1,97 @@
+---
+- name: Install asdf
+  git:
+    repo: 'https://github.com/asdf-vm/asdf.git'
+    dest: ~/.asdf
+    version: "v{{ asdf_version}}"
+  tags:
+    - asdf
+
+- name: Add asdf bash integration
+  lineinfile:
+    path: ~/.bashrc
+    line: ". $HOME/.asdf/asdf.sh"
+    state: present
+  tags:
+    - asdf
+
+- name: Add asdf bash completion
+  lineinfile:
+    path: ~/.bashrc
+    line: ". $HOME/.asdf/completions/asdf.bash"
+    state: present
+  tags:
+    - asdf
+
+- name: Install asdf plugins
+  command: "asdf plugin add {{ item }}"
+  loop: '{{ asdf_plugins }}'
+  register: plugin_add
+  failed_when: plugin_add == 2
+  tags:
+    - asdf
+
+- name: Install Node.js nodebuild
+  command: "asdf nodejs update-nodebuild"
+  tags:
+    - asdf
+    - nodejs
+
+- name: Install Node.js {{ nodejs_version }} with asdf
+  command: "asdf install nodejs {{ nodejs_version }}"
+  tags:
+    - asdf
+    - nodejs
+
+- name: Set global Node.js {{ nodejs_version}} with asdf
+  command: "asdf global nodejs {{ nodejs_version }}"
+  tags:
+    - asdf
+    - nodejs
+
+- name: Install Ruby {{ ruby_version }} with asdf
+  command: "asdf install ruby {{ ruby_version }}"
+  tags:
+    - asdf
+
+- name: Set global Ruby {{ ruby_version}} with asdf
+  command: asdf global ruby {{ ruby_version }}
+  tags:
+    - asdf
+    - ruby
+
+- name: Install GoLang {{ golang_version }} with asdf
+  command: "asdf install golang {{ golang_version }}"
+  tags:
+    - asdf
+
+- name: Set global Golang {{ golang_version}} with asdf
+  command: asdf global golang {{ golang_version }}
+  tags:
+    - asdf
+    - golang
+
+- name: Install Deno {{ deno_version }} with asdf
+  command: "asdf install deno {{ deno_version }}"
+  tags:
+    - asdf
+    - deno
+
+- name: Set global Deno {{ deno_version}} with asdf
+  command: asdf global deno {{ deno_version }}
+  tags:
+    - asdf
+    - deno
+
+- name: Install Java {{ java_version }} with asdf
+  command: "asdf install java {{ java_version }}"
+  tags:
+    - asdf
+    - java
+
+- name: Set global Java {{ java_version}} with asdf
+  command: asdf global java {{ java_version }}
+  tags:
+    - asdf
+    - java
+

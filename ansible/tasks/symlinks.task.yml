@@ -1,0 +1,27 @@
+---
+- name: Symlink NeoVim
+  file:
+    src: "{{ dotfiles_home }}/nvim"
+    dest: "~/.config/nvim"
+    state: link
+  tags:
+    - links
+
+- name: Symlink Tmux
+  file:
+    src: "{{ dotfiles_home }}/tmux/tmux.conf"
+    dest: "~/.tmux.conf"
+    state: link
+  tags:
+    - links
+
+- name: Symlink Git
+  file:
+    src: "{{ dotfiles_home }}/git/{{ item }}"
+    dest: "~/.{{ item }}"
+    state: link
+  loop:
+    - gitconfig
+    - gitignore
+  tags:
+    - links

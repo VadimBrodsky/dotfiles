@@ -26,7 +26,8 @@ gems:
   - rubocop
 
 node_modules:
-  - yarn
   - neovim
   - expo-cli
   - prettier
+  - tree-sitter-cli
+  - @astrojs/language-server

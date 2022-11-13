@@ -1,20 +1,21 @@
 "------------------------------ Visuals ---------------------------------
 set t_Co=256
-" set termguicolors
+set termguicolors
 " set background=light
-set background=dark
+" set background=dark
 
+colorscheme tokyonight-moon
 " colorscheme solarized
 " colorscheme monokai
-colorscheme PaperColor
+" colorscheme PaperColor
 
 " let &colorcolumn=join(range(81,999),",")
 " let &colorcolumn="80,".join(range(120,999),",")
 " highlight ColorColumn ctermbg=236 guibg=#ece6d5
 
 " Background from terminal
-highlight Normal     ctermbg=none
-highlight nonText    ctermbg=none
-highlight LineNr     ctermbg=NONE guibg=NONE
-highlight SignColumn ctermbg=NONE guibg=NONE
+"highlight Normal     ctermbg=none
+"highlight nonText    ctermbg=none
+"highlight LineNr     ctermbg=NONE guibg=NONE
+"highlight SignColumn ctermbg=NONE guibg=NONE
 

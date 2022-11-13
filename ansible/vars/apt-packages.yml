@@ -9,7 +9,6 @@ apt_packages:
   - gpg
   - htop
   - jq
-  - neovim
   - tmux
   - tree
   - watchman

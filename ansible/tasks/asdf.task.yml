@@ -49,6 +49,16 @@
     - asdf
     - nodejs
 
+- name: Enable corepack and install pnpm
+  commands: "{{ command }}"
+  with_items:
+    - "corepack enable"
+    - "corepack prepare pnpm@latest --activate"
+    - "asdf reshim"
+  tags:
+    - asdf
+    - nodejs
+
 - name: Install Ruby {{ ruby_version }} with asdf
   command: "asdf install ruby {{ ruby_version }}"
   tags:

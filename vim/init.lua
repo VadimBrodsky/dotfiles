@@ -108,6 +108,7 @@ end)
 -- TreeSitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
+    'astro',
     'javascript',
     'typescript',
     'tsx',
@@ -147,6 +148,8 @@ require'lspconfig'.eslint.setup{
   on_attach = on_lsp_attach,
   flags = lsp_flags,
 }
+
+require'lspconfig'.astro.setup{}
 
 -- Visual
 set.termguicolors = false             -- Terminal colors support

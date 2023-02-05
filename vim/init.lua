@@ -94,7 +94,10 @@ packer.startup(function(use)
   use 'junegunn/fzf.vim'
 
   use 'NLKNguyen/papercolor-theme'       -- 🎨 Light & Dark Vim color schemes inspired by Google's Material Design
-  use 'folke/tokyonight.nvim'            -- 🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins
+  use 'sainnhe/edge'
+  use 'Mofiqul/adwaita.nvim'             -- Neovim colorscheme using Gnome Adwaita syntax
+  use 'marko-cerovac/material.nvim'      -- The original Material theme now available for NeoVim
+  use 'folke/tokyonight.nvim'            -- 🏙 A clean, dark Neovim theme written in Lua
 
   use {
     'prettier/vim-prettier',
@@ -152,14 +155,10 @@ require'lspconfig'.eslint.setup{
 require'lspconfig'.astro.setup{}
 
 -- Visual
-set.termguicolors = false             -- Terminal colors support
-set.background = 'light'              -- Set a light background
+set.termguicolors = true              -- Terminal colors support
+-- set.background = 'light'              -- Set a light background
 -- set.background = 'dark'            -- Set a dark background
 -- set.colorcolumn = 100              -- Set a color column
-
--- vim.cmd[[colorscheme PaperColor]] 
-vim.cmd[[colorscheme tokyonight-day]] 
-
 vim.wo.signcolumn = 'yes'
 -- Set the color for the color column
 -- highlight Normal     ctermbg = none
@@ -167,6 +166,22 @@ vim.wo.signcolumn = 'yes'
 -- highlight LineNr     ctermbg = NONE guibg = NONE
 -- highlight ColorColumn ctermbg = 254 guibg = lightgrey
 -- highlight ColorColumn ctermbg = 237 guibg = lightgrey
+
+-- ColorScheme
+-- vim.cmd[[colorscheme PaperColor]] 
+vim.cmd[[colorscheme edge]] 
+
+-- vim.g.adwaita_darker = false             -- for darker version
+-- vim.g.adwaita_disable_cursorline = false -- to disable cursorline
+-- vim.g.adwaita_transparent = false        -- makes the background transparent
+-- vim.cmd([[colorscheme adwaita]])
+
+-- darker, lighter, oceanic, palenight, deep ocean
+-- vim.g.material_style = "lighter"
+-- vim.cmd([[colorscheme material]])
+
+-- tokyonight, tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
+-- vim.cmd[[colorscheme tokyonight-night]]
 
 -- Netrw
 -- vim.g.netrw_browse_split = 2          -- open files in a vertical split

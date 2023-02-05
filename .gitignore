@@ -10,6 +10,7 @@
 yarn/global/node_modules
 plug.vim
 asdf.fish
+*/packer_compiled.lua
 
 # These are added when installing fzf via vim plug
 fish/functions/fish_user_key_bindings.fish
